@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abhishek-biswas-design.abhishek25789.chatgpt.site/sitemap.xml
