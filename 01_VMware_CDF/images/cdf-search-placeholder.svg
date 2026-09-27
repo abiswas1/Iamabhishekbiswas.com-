@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 570" role="img" aria-labelledby="title desc">
+  <title id="title">Search results screen export pending</title>
+  <desc id="desc">A neutral placeholder for the approved VMware Docs search interface export.</desc>
+  <rect width="1100" height="570" rx="18" fill="#dce7e0"/>
+  <rect x="76" y="50" width="948" height="466" rx="14" fill="#f4f5f1" stroke="#9dbab0" stroke-width="2"/>
+  <rect x="76" y="50" width="948" height="62" rx="14" fill="#123b39"/>
+  <rect x="120" y="145" width="725" height="46" rx="9" fill="white" stroke="#94b7ad" stroke-width="2"/><circle cx="148" cy="168" r="9" fill="none" stroke="#008f82" stroke-width="3"/><path d="m155 175 7 7" stroke="#008f82" stroke-width="3" stroke-linecap="round"/>
+  <rect x="867" y="145" width="110" height="46" rx="9" fill="#008f82"/>
+  <rect x="120" y="225" width="230" height="254" rx="8" fill="#e4ece7"/>
+  <rect x="377" y="225" width="600" height="69" rx="8" fill="white"/><rect x="377" y="312" width="600" height="69" rx="8" fill="white"/><rect x="377" y="399" width="600" height="69" rx="8" fill="white"/>
+  <g fill="#bdd3c8"><rect x="407" y="249" width="272" height="9" rx="4"/><rect x="407" y="335" width="330" height="9" rx="4"/><rect x="407" y="423" width="290" height="9" rx="4"/></g>
+  <text x="550" y="548" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#53645e">Approved VMware Docs search results export</text>
+</svg>

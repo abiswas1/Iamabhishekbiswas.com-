@@ -1,0 +1,49 @@
+/* Shared layout for all four case-study pages */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --content-max: 1100px;
+  --pad-x: 32px;
+  --section-gap: 96px;
+  --text: #1a1a1a;
+  --muted: #5c5c5c;
+  --bg: #ffffff;
+}
+
+html, body { margin: 0; overflow-x: hidden; }
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* The ONE container every section uses: identical left/right padding */
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+}
+
+/* Sections and full-width bands keep the same inner padding via .container */
+.section { padding: calc(var(--section-gap) / 2) 0; }
+.section + .section { margin-top: calc(var(--section-gap) / 2); }
+.band { width: 100%; }
+
+img, video { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { line-height: 1.2; }
+p { margin: 0 0 1em; }
+
+@media (max-width: 600px) {
+  :root { --pad-x: 18px; --section-gap: 56px; }
+  body { font-size: 16px; }
+}
+
+/* Usage:
+<section class="section">
+  <div class="container"> ...content... </div>
+</section>
+*/

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 570" role="img" aria-labelledby="title desc">
+  <title id="title">DocsDash screen export pending</title>
+  <desc id="desc">A neutral placeholder for the approved publishing interface export.</desc>
+  <rect width="1100" height="570" rx="18" fill="#dce7e0"/>
+  <rect x="90" y="65" width="920" height="440" rx="14" fill="#f4f5f1" stroke="#9dbab0" stroke-width="2"/>
+  <rect x="90" y="65" width="920" height="58" rx="14" fill="#123b39"/>
+  <circle cx="123" cy="94" r="7" fill="#dcf363"/><circle cx="147" cy="94" r="7" fill="#73cbb4"/><circle cx="171" cy="94" r="7" fill="#e8efeb"/>
+  <rect x="120" y="157" width="194" height="316" rx="7" fill="#e5ece6"/>
+  <rect x="344" y="157" width="631" height="53" rx="7" fill="#e5ece6"/>
+  <rect x="344" y="232" width="631" height="241" rx="7" fill="#e5ece6"/>
+  <path d="M370 270h574M370 315h574M370 360h574M370 405h574" stroke="#c2d2c9" stroke-width="12" stroke-linecap="round"/>
+  <text x="550" y="544" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#53645e">Approved DocsDash 2.0 screen export</text>
+</svg>
