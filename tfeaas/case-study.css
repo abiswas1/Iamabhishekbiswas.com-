@@ -476,3 +476,10 @@
  .tfe-case .flow-platform{font-size:14px;letter-spacing:0}
  .tfe-case .flow-heading h3{font-size:26px}
 }
+
+/* A direct link to the advanced service prototype. */
+.tfe-case .phase2-prototype-action{margin:24px 0 0}
+.tfe-case .phase2-prototype-link{display:inline-flex;align-items:center;gap:10px;max-width:100%;min-height:44px;padding:6px 0;font:600 18px/1.5 var(--body);color:var(--teal);text-decoration:none;border-bottom:1.5px solid currentColor;transition:color .18s ease}
+.tfe-case .phase2-prototype-link:hover{color:var(--ink)}
+.tfe-case .phase2-prototype-link>span{flex-shrink:0;font-size:23px;line-height:1}
+.tfe-case .phase2-prototype-link:focus-visible{outline:3px solid var(--teal);outline-offset:5px;border-radius:3px}
