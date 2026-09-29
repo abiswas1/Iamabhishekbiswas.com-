@@ -30,8 +30,11 @@
     .download-link:hover{background:var(--ink);color:var(--lime);transform:translateY(-1px)}
     .download-link svg,.back-link svg{display:block;flex:none}
     .resume-pages{max-width:960px;margin:0 auto;padding:20px 24px 72px}
-    .resume-page{margin:0 0 24px;background:#fff;box-shadow:0 8px 32px rgba(23,39,36,.09)}
+    .resume-page{position:relative;margin:0 0 24px;background:#fff;box-shadow:0 8px 32px rgba(23,39,36,.09)}
     .resume-page img{display:block;width:100%;height:auto}
+    .resume-document-link{position:absolute;display:block;border-radius:2px}
+    .resume-document-link:hover{background:rgba(0,121,110,.12)}
+    .resume-document-link:focus-visible{outline:2px solid var(--teal);outline-offset:2px;background:rgba(0,121,110,.12)}
     .scroll-top{position:fixed;right:clamp(16px,3vw,36px);bottom:calc(18px + env(safe-area-inset-bottom));z-index:20;display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid rgba(220,243,99,.35);border-radius:50%;background:rgba(23,39,36,.9);color:var(--lime);box-shadow:0 7px 22px rgba(23,39,36,.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease,background .2s ease}
     .scroll-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
     .scroll-top:hover{background:#0d574e;transform:translateY(-3px)}
@@ -54,18 +57,18 @@
   <header class="resume-toolbar">
     <div class="toolbar-inner">
       <span class="toolbar-title">Résumé</span>
-      <a class="download-link" href="./Abhishek_Biswas_Resume_ATS.pdf?v=170" target="_blank" rel="noopener noreferrer" aria-label="Open Abhishek Biswas résumé PDF in a new tab to download" title="Open the PDF, then use the viewer’s download button">
+      <a class="download-link" href="./Abhishek_Biswas_Resume_ATS.pdf?v=181" target="_blank" rel="noopener noreferrer" aria-label="Open Abhishek Biswas résumé PDF in a new tab to download" title="Open the PDF, then use the viewer’s download button">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
         Open PDF
       </a>
     </div>
   </header>
-  <div class="resume-back-row"><a class="back-link" href="/"><span class="back-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></span><span>Home</span></a></div>
+  <div class="resume-back-row"><a class="back-link" href="../index.html"><span class="back-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></span><span>Home</span></a></div>
   <main class="resume-pages" id="resume">
     <h1 class="sr-only">Abhishek Biswas résumé</h1>
-    <a class="sr-only" href="./Abhishek_Biswas_Resume_ATS.pdf?v=170" target="_blank" rel="noopener noreferrer">Open the selectable PDF version of this résumé</a>
-    <figure class="resume-page"><img src="./resume-page-1.webp?v=170" width="1429" height="2021" alt="Résumé page 1 of 2: summary and experience from IBM through VMware." fetchpriority="high"></figure>
-    <figure class="resume-page"><img src="./resume-page-2.webp?v=170" width="1429" height="2021" alt="Résumé page 2 of 2: Cogoport and earlier experience, skills, education and awards." loading="lazy"></figure>
+    <a class="sr-only" href="./Abhishek_Biswas_Resume_ATS.pdf?v=181" target="_blank" rel="noopener noreferrer">Open the selectable PDF version of this résumé</a>
+    <figure class="resume-page"><img src="./resume-page-1.webp?v=181" width="1429" height="2021" alt="Résumé page 1 of 2: summary and experience from IBM through VMware." fetchpriority="high"><!-- RESUME_LINKS_START --><a class="resume-document-link" href="https://www.linkedin.com/in/iam-abhishekbiswas" target="_blank" rel="noopener noreferrer" aria-label="Visit Abhishek Biswas on LinkedIn (opens in a new tab)" title="Visit Abhishek Biswas on LinkedIn (opens in a new tab)" style="left:43.337036%;top:11.046577%;width:24.562675%;height:1.311333%"></a><a class="resume-document-link" href="https://iamabhishekbiswas.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Abhishek Biswas’s website (opens in a new tab)" title="Visit Abhishek Biswas’s website (opens in a new tab)" style="left:69.160842%;top:11.046577%;width:16.747066%;height:1.311333%"></a><!-- RESUME_LINKS_END --></figure>
+    <figure class="resume-page"><img src="./resume-page-2.webp?v=181" width="1429" height="2021" alt="Résumé page 2 of 2: Cogoport and earlier experience, skills, education and awards." loading="lazy"></figure>
   </main>
   <button class="scroll-top" type="button" aria-label="Scroll to top" title="Back to top"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></button>
   <script>
