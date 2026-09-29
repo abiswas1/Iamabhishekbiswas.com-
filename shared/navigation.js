@@ -36,5 +36,10 @@
    headerFramePending=false;
   });
  },{passive:true});
+ window.addEventListener('pageshow',()=>{
+  lastScrollY=window.scrollY;
+  header.classList.remove('is-hidden');
+  if(scrollTopButton)scrollTopButton.classList.toggle('is-visible',lastScrollY>500);
+ });
  header.addEventListener('focusin',()=>header.classList.remove('is-hidden'));
 })();

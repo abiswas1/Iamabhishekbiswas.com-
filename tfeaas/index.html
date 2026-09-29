@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
+<script src="/shared/theme.js?v=189"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f5f1">
   <meta name="description" content="How Abhishek Biswas led the design of Terraform Enterprise as a Service on IBM Cloud, helping teams set up in 1 to 2 hours in testing and explore the next phase with AI.">
@@ -15,10 +16,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&amp;family=Hanken+Grotesk:wght@500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="96x96" href="../favicon.png">
-  <link rel="apple-touch-icon" sizes="192x192" href="../favicon-192.png">
   <link rel="stylesheet" href="../shared/navigation.css">
-  <script src="../shared/navigation.js" defer></script>
+  <script src="../shared/navigation.js?v=188" defer></script>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -36,12 +35,17 @@
 <link rel="stylesheet" href="../shared/case-navigation.css?v=158">
 <script src="../shared/case-navigation.js?v=158" defer></script>
 <script src="../tfeaas/media.js?v=162" defer></script>
-<script src="../tfeaas/impact-icons.js?v=172" defer></script></head>
-<body class="visual-case tfe-case has-case-navigation">
+<script src="../tfeaas/impact-icons.js?v=172" defer></script><link rel="stylesheet" href="/shared/theme-controls.css?v=187">
+<link rel="stylesheet" href="/shared/dark-theme.css?v=192">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=193">
+<link rel="alternate icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=193">
+<link rel="apple-touch-icon" sizes="192x192" href="/favicon-192.png?v=193">
+</head>
+<body class="theme-case visual-case tfe-case has-case-navigation">
   
-  <header class="portfolio-header"><div class="portfolio-header-inner"><a class="portfolio-brand" href="https://iamabhishekbiswas.com/" aria-label="Abhishek Biswas, home"><img src="../brand-mark.svg?v=2" alt="" width="39" height="39"><span>Abhishek Biswas<b>.</b></span></a><nav class="portfolio-nav" aria-label="Main navigation"><div class="portfolio-menu" id="portfolio-menu"><a href="https://iamabhishekbiswas.com/#work">Work</a><a href="https://iamabhishekbiswas.com/#process">My approach</a><a href="https://iamabhishekbiswas.com/#experience">Experience</a><a href="https://iamabhishekbiswas.com/#about">About</a><a href="https://iamabhishekbiswas.com/resume/" target="_blank" rel="noopener noreferrer">Résumé</a></div><a class="portfolio-contact" href="https://iamabhishekbiswas.com/#contact">Get in touch</a><button class="portfolio-menu-toggle" type="button" aria-expanded="false" aria-controls="portfolio-menu" aria-label="Open navigation menu"><svg width="22" height="22" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path class="menu-lines" d="M4 7h16M4 12h16M4 17h16"></path><path class="menu-close" d="m6 6 12 12M18 6 6 18"></path></svg></button></nav></div></header>
+  <header class="portfolio-header"><div class="portfolio-header-inner"><a class="portfolio-brand" href="/" aria-label="Abhishek Biswas, home"><img src="../brand-mark.svg?v=2" alt="" width="39" height="39"><span>Abhishek Biswas<b>.</b></span></a><nav class="portfolio-nav" aria-label="Main navigation"><div class="portfolio-menu" id="portfolio-menu"><a href="/#work">Work</a><a href="/#process">My approach</a><a href="/#experience">Experience</a><a href="/#about">About</a><a href="/resume/" target="_blank" rel="noopener noreferrer">Résumé</a></div><button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme"><svg class="theme-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3.8"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg><svg class="theme-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.5A8.6 8.6 0 0 1 10.5 3.4a8.6 8.6 0 1 0 10.1 10.1Z"/></svg></button><a class="portfolio-contact" href="/#contact">Get in touch</a><button class="portfolio-menu-toggle" type="button" aria-expanded="false" aria-controls="portfolio-menu" aria-label="Open navigation menu"><svg width="22" height="22" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path class="menu-lines" d="M4 7h16M4 12h16M4 17h16"></path><path class="menu-close" d="m6 6 12 12M18 6 6 18"></path></svg></button></nav></div></header>
 
-  <nav class="case-navigation" aria-label="Case study sections"><span class="case-navigation-label">On this page</span><div class="case-navigation-links"><a href="#overview" aria-current="location">Overview</a><a href="#challenge">The challenge</a><a href="#contribution">My contribution</a><a href="#research">Discovery</a><a href="#market">AWS and IBM Cloud</a><a href="#phase-one">Phase 1</a><a href="#validation">Validation</a><a href="#phase-two">Phase 2 · AI</a><a href="#value">Impact</a><a href="#reflection">Reflection</a></div></nav><div class="case-page"><div class="portfolio-back-row"><a class="portfolio-back" href="https://iamabhishekbiswas.com/#work"><span class="portfolio-back-icon"><svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"></path></svg></span><span>All work</span></a></div>
+  <nav class="case-navigation" aria-label="Case study sections"><span class="case-navigation-label">On this page</span><div class="case-navigation-links"><a href="#overview" aria-current="location">Overview</a><a href="#challenge">The challenge</a><a href="#contribution">My contribution</a><a href="#research">Discovery</a><a href="#market">AWS and IBM Cloud</a><a href="#phase-one">Phase 1</a><a href="#validation">Validation</a><a href="#phase-two">Phase 2 · AI</a><a href="#value">Impact</a><a href="#reflection">Reflection</a></div></nav><div class="case-page"><div class="portfolio-back-row"><a class="portfolio-back" href="/#work"><span class="portfolio-back-icon"><svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"></path></svg></span><span>All work</span></a></div>
 
   <main class="case-main" id="top">
 <section class="hero intro" id="overview"><div class="wrap"><div class="hero-project-heading"><span class="eyebrow">IBM Cloud · Terraform Enterprise as a Service</span><span class="project-status">Phase 1 · In development</span></div><h1>From running Terraform Enterprise<br>to <span>simply using it.</span></h1><p class="lede">Teams wanted to use Terraform Enterprise to manage cloud infrastructure. First, they had to install and maintain the platform itself. This project brings that work into IBM Cloud, so customers can focus on using the service.</p><dl class="facts project-meta"><div><dt>My role</dt><dd>Lead Product Designer</dd></div><div><dt>Timeline</dt><dd>Phase 1 · 2025 to 2026<br>Phase 2 · Planned for 2027</dd></div><div><dt>Collaboration</dt><dd>Product, engineering, architecture, service reliability and launch teams</dd></div></dl><div class="chapter-plan"><article><span class="eyebrow">Phase 1 · Get teams started</span><h3>Set up, check and start using.</h3><p>Design and test how teams set up their service, check that it is ready and open Terraform Enterprise.</p></article><article><span class="eyebrow">Phase 2 · The advanced version</span><h3>Support the work that follows setup.</h3><p>Build on Phase 1 with monitoring, workspace views, access controls and policy checks, explored through an interactive Figma Make prototype.</p></article></div></div></section>
@@ -112,7 +116,7 @@
 <li class="reflection-card"><span class="reflection-number" aria-hidden="true">03</span><h3>What I take forward</h3><p>Figma Make helped turn the advanced version into a prototype we could explore and discuss. AI made it easier to connect the screens, but deciding where tasks belonged and how access should work still needed design judgement and collaboration with product and engineering.</p></li>
 </ol>
 <div class="reflection-takeaway"><p>A simpler experience should leave people clear about their next step, where to take it and what they are responsible for.</p></div>
-</div></section></main><div class="next"><div class="wrap"><a class="next-card" href="https://iamabhishekbiswas.com/vmware/"><small>Next case study</small><span>Making VMware’s documentation easier to find, use and publish.</span><em>View project ↗</em></a><div class="foot"><span>© 2026 Abhishek Biswas</span></div></div></div>
+</div></section></main><div class="next"><div class="wrap"><a class="next-card" href="/vmware/"><small>Next case study</small><span>Making VMware’s documentation easier to find, use and publish.</span><em>View project ↗</em></a><div class="foot"><span>© 2026 Abhishek Biswas</span></div></div></div>
   
 
   

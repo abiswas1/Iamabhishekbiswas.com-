@@ -1,0 +1,53 @@
+/* Shared theme control and résumé layout, available in both color themes. */
+:root {
+  --surface:#ffffff; --body-ink:#34403c; --muted:#53645e;
+  --control-line:#6b8277; --on-accent:#11251d;
+}
+:root[data-theme="light"] { color-scheme:light; --teal:#006f65; }
+.theme-toggle {
+  display:inline-flex; align-items:center; justify-content:center; flex:none;
+  width:40px; height:40px; padding:0; border:0;
+  border-radius:50%; background:transparent; color:var(--muted); cursor:pointer;
+  transition:background .18s ease,color .18s ease;
+}
+.theme-toggle:hover, .theme-toggle:active { background:#1727240d; color:var(--ink); }
+html[data-theme="dark"] .theme-toggle:hover, html[data-theme="dark"] .theme-toggle:active { background:#ffffff0d; }
+.portfolio-nav .theme-toggle { margin-right:-12px; }
+@media(max-width:1100px) { .portfolio-nav .theme-toggle { margin-right:-4px; } }
+@media(max-width:620px) { .portfolio-nav .theme-toggle { margin-right:0; } }
+.theme-toggle:focus-visible { outline:3px solid var(--teal); outline-offset:4px; }
+.theme-toggle svg { display:block; width:18px; height:18px; flex:none; stroke-width:1.6; }
+.theme-toggle .theme-moon { display:none; }
+html[data-theme="light"] .theme-toggle .theme-sun { display:none; }
+html[data-theme="light"] .theme-toggle .theme-moon { display:block; }
+.portfolio-header .portfolio-brand { min-width:0; flex-shrink:1; }
+.portfolio-header .portfolio-brand>span { overflow:hidden; text-overflow:ellipsis; }
+.portfolio-header .portfolio-brand img, .portfolio-header .portfolio-nav { flex-shrink:0; }
+.resume-toolbar-actions { display:flex; align-items:center; gap:8px; }
+html[data-theme="light"] .portfolio-brand b { color:var(--teal); }
+html[data-theme="light"] .portfolio-header .portfolio-nav a:not(.portfolio-contact):hover { color:#006f65; }
+html[data-theme="light"] #contact.contact a:hover { color:#123b39; }
+html[data-theme="light"] .resume-sheet a:hover { color:#174f43; }
+html[data-theme="light"] .resume-sheet a:focus-visible { outline-color:#006f65; }
+@media(max-width:620px) { .theme-toggle { width:36px; height:36px; } .resume-toolbar-actions { gap:8px; } }
+@media(prefers-reduced-motion:reduce) { .theme-toggle { transition:none; } }
+.resume-sheet { background:var(--surface); color:var(--body-ink); border:1px solid var(--line); border-radius:20px; padding:clamp(24px,5vw,58px); margin:0 0 24px; }
+.resume-sheet h1 { font:600 clamp(2rem,5vw,3rem)/1.15 'Space Grotesk',sans-serif; letter-spacing:-.04em; color:var(--ink); margin:0 0 14px; }
+.resume-sheet h2 { font:700 1rem/1.4 'Space Grotesk',sans-serif; letter-spacing:.08em; color:var(--teal); border-bottom:1px solid var(--line); padding-bottom:12px; margin:34px 0 20px; }
+.resume-sheet h3 { font:700 1.15rem/1.4 'DM Sans',sans-serif; color:var(--ink); margin:0 0 4px; }
+.resume-sheet p, .resume-sheet li { font-size:1rem; line-height:1.7; margin:0 0 12px; }
+.resume-sheet strong, .resume-sheet b { color:var(--ink); }
+.resume-sheet .resume-subtitle { font-weight:600; color:var(--ink); }
+.resume-sheet .resume-meta { color:var(--muted); margin-bottom:14px; font-size:.94rem; }
+.resume-sheet .resume-contact { font-size:.94rem; color:var(--muted); overflow-wrap:anywhere; }
+.resume-sheet a { color:var(--teal); text-decoration:underline; text-underline-offset:4px; }
+.resume-sheet a:hover { color:var(--lime); }
+.resume-sheet ul { padding-left:22px; margin:12px 0 0; }
+.resume-sheet li::marker { color:var(--teal); }
+.resume-entry { margin:0 0 28px; }
+.resume-sheet .resume-entry:last-child { margin-bottom:0; }
+@media(max-width:600px) {
+  .theme-resume .resume-pages { padding:18px 14px 32px; }
+  .resume-sheet { border-radius:14px; padding:24px 20px; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }

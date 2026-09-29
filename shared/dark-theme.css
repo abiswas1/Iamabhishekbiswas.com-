@@ -1,0 +1,191 @@
+/* Portfolio dark theme. Shared by every route; product screenshots retain their original colors. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #111b19;
+  --bg: #111b19;
+  --ink: #eef4ee;
+  --text: #eef4ee;
+  --body-ink: #d0dcd4;
+  --muted: #b0beb7;
+  --white: #1b2824;
+  --mist: #24352f;
+  --line: #3d5148;
+  --teal: #7fd7c0;
+  --lime: #d9ec8a;
+  --dark: #142e28;
+  --surface: #1b2824;
+  --surface-raised: #24352f;
+  --control-line: #789487;
+  --on-accent: #11251d;
+  --focus: #e4f59f;
+  --contact-gradient: linear-gradient(115deg,#dcf363 0%,#a9e39a 52%,#68cbb0 100%);
+}
+html[data-theme="dark"],
+:where(html[data-theme="dark"]) body { background: var(--paper); color: var(--ink); }
+:where(html[data-theme="dark"]) ::selection { background: var(--lime); color: var(--on-accent); }
+html[data-theme="dark"] { scrollbar-color: var(--control-line) var(--paper); }
+:root[data-theme="dark"] body :is(a, button, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--focus); outline-offset: 5px;
+}
+:where(html[data-theme="dark"]) body .sr-only:focus { position:static; width:auto; height:auto; clip:auto; margin:0 0 20px; display:block; }
+
+/* Navigation, including its mobile menu and the case-study reading rail. */
+:where(html[data-theme="dark"]) .portfolio-header,
+:where(html[data-theme="dark"]) .resume-toolbar {
+  background: #111b19f5; border-bottom: 1px solid var(--line);
+}
+:where(html[data-theme="dark"]) .portfolio-header .portfolio-brand,
+:where(html[data-theme="dark"]) .portfolio-header .portfolio-nav a { color: var(--ink); }
+:where(html[data-theme="dark"]) .portfolio-brand b { color: var(--teal); }
+:where(html[data-theme="dark"]) .portfolio-header .portfolio-nav a:hover { color: var(--teal); }
+:where(html[data-theme="dark"]) .portfolio-header .portfolio-menu { background: var(--paper); border-color: var(--line); }
+:where(html[data-theme="dark"]) .portfolio-header .portfolio-menu a:hover { background: transparent; }
+:where(html[data-theme="dark"]) .portfolio-menu-toggle { color: var(--ink); }
+:where(html[data-theme="dark"]) .portfolio-menu-toggle:hover { background: var(--mist); }
+:where(html[data-theme="dark"]) .portfolio-header .portfolio-nav .portfolio-contact {
+  color: var(--on-accent);
+  background-image: var(--contact-gradient);
+}
+:where(html[data-theme="dark"]) .portfolio-header .portfolio-nav .portfolio-contact:hover { color: var(--on-accent); filter:brightness(1.05); }
+:where(html[data-theme="dark"]) .portfolio-back,
+:where(html[data-theme="dark"]) .back-link { color: var(--body-ink); }
+:where(html[data-theme="dark"]) .portfolio-back-icon,
+:where(html[data-theme="dark"]) .back-icon { background:var(--surface); border-color:var(--control-line); }
+:where(html[data-theme="dark"]) .portfolio-back:hover,
+:where(html[data-theme="dark"]) .back-link:hover { color:var(--teal); }
+:where(html[data-theme="dark"]) .portfolio-back:hover .portfolio-back-icon,
+:where(html[data-theme="dark"]) .back-link:hover .back-icon { background:var(--mist); border-color:var(--teal); }
+:where(html[data-theme="dark"]) .case-navigation { background:var(--paper); border-color:var(--line); }
+:where(html[data-theme="dark"]) .case-navigation-label { color:var(--muted); }
+:where(html[data-theme="dark"]) .case-navigation .case-navigation-links a { color:var(--muted); }
+:where(html[data-theme="dark"]) .case-navigation .case-navigation-links a:hover { background:var(--mist); color:var(--ink); }
+:where(html[data-theme="dark"]) .case-navigation .case-navigation-links a[aria-current=location] {
+  background:var(--mist); color:var(--teal); box-shadow:inset 3px 0 var(--teal);
+}
+:where(html[data-theme="dark"]) .portfolio-scroll-top,
+:where(html[data-theme="dark"]) .scroll-top { background:#1b2824; color:var(--lime); border-color:var(--control-line); box-shadow:0 8px 24px #0005; }
+:where(html[data-theme="dark"]) .portfolio-scroll-top:hover,
+:where(html[data-theme="dark"]) .scroll-top:hover { background:#294a3c; }
+@media(max-width:1180px) {
+  :where(html[data-theme="dark"]) .case-navigation { background:#111b19f7; }
+  :where(html[data-theme="dark"]) .case-navigation .case-navigation-links a[aria-current=location] { box-shadow:inset 0 -3px var(--teal); }
+}
+
+/* Home: colored project identities, low-glare surfaces and quiet outline shapes. */
+:where(html[data-theme="dark"]) .theme-home .projects .project { background:#203b33; color:var(--ink); border:1px solid #3f6154; }
+:where(html[data-theme="dark"]) .theme-home .projects .project:nth-child(2) { background:#243642; border-color:#475d6b; }
+:where(html[data-theme="dark"]) .theme-home .projects .project.project-skyline { background:#3d2e27; border-color:#705044; }
+:where(html[data-theme="dark"]) .theme-home .projects .project.project-research { background:#393522; border-color:#685f3c; }
+:where(html[data-theme="dark"]) .theme-home .projects .project.project-shipment { background:#342a3e; border-color:#65506f; }
+:where(html[data-theme="dark"]) .theme-home .projects .project::after { border-color:#ffffff0d; }
+:where(html[data-theme="dark"]) .theme-home .projects .project.project-skyline::after { background:#ffffff0d; }
+:where(html[data-theme="dark"]) .theme-home .project-content p { color:var(--body-ink); }
+:where(html[data-theme="dark"]) .theme-home .project-content .outcome { border-color:#ffffff38; }
+:where(html[data-theme="dark"]) .theme-home .project-content .outcome strong,
+:where(html[data-theme="dark"]) .theme-home .project-content .client { color:var(--ink); }
+:where(html[data-theme="dark"]) .theme-home .projects .project .project-visual { background:linear-gradient(135deg,#294e42,#1d3932 52%,#152c28); }
+:where(html[data-theme="dark"]) .theme-home .projects .project:nth-child(2) .project-visual { background:linear-gradient(135deg,#354e60,#243b4a 52%,#1a2a35); }
+:where(html[data-theme="dark"]) .theme-home .projects .project.project-skyline .project-visual { background:linear-gradient(135deg,#624638,#442f28 52%,#30231f); }
+:where(html[data-theme="dark"]) .theme-home .projects .project.project-research .project-visual { background:linear-gradient(135deg,#5b5030,#413a26 52%,#2e2b20); }
+:where(html[data-theme="dark"]) .theme-home .projects .project.project-shipment .project-visual { background:linear-gradient(135deg,#554262,#3a2e46 52%,#292331); }
+:where(html[data-theme="dark"]) .theme-home .project:hover:has(.project-hit) { box-shadow:0 15px 35px #0004; }
+:where(html[data-theme="dark"]) .theme-home .project-hit:focus-visible { outline:3px solid var(--focus); outline-offset:-5px; }
+:where(html[data-theme="dark"]) .theme-home .process-steps li { background:var(--surface); }
+:where(html[data-theme="dark"]) .theme-home .process-steps li:hover .process-icon,
+:where(html[data-theme="dark"]) .theme-home .process-steps li:focus-within .process-icon,
+:where(html[data-theme="dark"]) .theme-home .process-steps li:has(.process-icon[aria-pressed=true]) .process-icon {
+  background:linear-gradient(135deg,#244638,#153a30); color:var(--lime); border-color:var(--teal);
+}
+:where(html[data-theme="dark"]) .theme-home .career-scroll .career-list>li:nth-child(odd) { background:#1b2824; border-top-color:#607e6e; }
+:where(html[data-theme="dark"]) .theme-home .career-scroll .career-list>li:nth-child(even) { background:#203b30; border-top-color:#607e6e; }
+:where(html[data-theme="dark"]) .theme-home .career-controls button { background:var(--surface); color:var(--ink); border-color:var(--control-line); }
+:where(html[data-theme="dark"]) .theme-home .career-controls button:not(:disabled):hover,
+:where(html[data-theme="dark"]) .theme-home .career-controls button:not(:disabled):focus-visible { background:var(--mist); color:var(--lime); }
+:where(html[data-theme="dark"]) .theme-home .about,
+:where(html[data-theme="dark"]) .theme-home .portrait-frame { background:var(--dark); }
+:where(html[data-theme="dark"]) .theme-home .about p { color:var(--body-ink); }
+/* Bright contact accent matches the navigation CTA, with dark text throughout. */
+:where(html[data-theme="dark"]) #contact.contact {
+  --ink:#11251d;
+  --body-ink:#233e32;
+  --focus:#174f43;
+  color:var(--ink);
+  background-image:var(--contact-gradient);
+}
+:where(html[data-theme="dark"]) #contact.contact .section-label,
+:where(html[data-theme="dark"]) #contact.contact .contact-detail-label { color:#294b3b; }
+:where(html[data-theme="dark"]) #contact.contact .contact-intro { color:var(--body-ink); }
+:where(html[data-theme="dark"]) #contact.contact a:hover { color:#174f43; }
+:where(html[data-theme="dark"]) #contact.contact .contact-resume .resume-button {
+  background:#172724; color:#f4f5f1; border-color:#172724;
+}
+:where(html[data-theme="dark"]) #contact.contact .contact-resume .resume-button:hover,
+:where(html[data-theme="dark"]) #contact.contact .contact-resume .resume-button:focus-visible { background:#123b39; color:#fff; border-color:#123b39; }
+:where(html[data-theme="dark"]) body footer { background:#0b1412; color:var(--muted); }
+
+/* Case studies: existing design tokens plus explicit inverse/special surfaces. */
+:where(html[data-theme="dark"]) .card.ink { background:#193b30; border-color:#496d5b; color:var(--ink); }
+:where(html[data-theme="dark"]) .card.ink h3,
+:where(html[data-theme="dark"]) .card.ink strong { color:var(--ink); }
+:where(html[data-theme="dark"]) .card.ink p,
+:where(html[data-theme="dark"]) .card.ink li { color:var(--body-ink); }
+:where(html[data-theme="dark"]) .card.ink .tag { color:var(--lime); }
+:where(html[data-theme="dark"]) .journey::after { background:#ffffff05; }
+:where(html[data-theme="dark"]) .stop.hot .pain { background:#334c36; }
+:where(html[data-theme="dark"]) .steps8 li::before { background:var(--teal); color:var(--on-accent); }
+:where(html[data-theme="dark"]) .steps8 li:last-child { background:#193b30; color:var(--ink); }
+:where(html[data-theme="dark"]) .steps8 li:last-child::before { color:var(--on-accent); }
+:where(html[data-theme="dark"]) .steps8 li:last-child span { color:var(--body-ink); }
+:where(html[data-theme="dark"]) .next-card em { color:var(--on-accent); }
+:where(html[data-theme="dark"]) .shot.dark { background:#15211d; border-color:var(--line); }
+:where(html[data-theme="dark"]) .tfe-case .journey-lanes span { background:#193b30; color:var(--ink); }
+:where(html[data-theme="dark"]) .tfe-case .journey-lanes span:last-child { background:var(--teal); color:var(--on-accent); }
+:where(html[data-theme="dark"]) .tfe-case .comparison-heading>div:last-child,
+:where(html[data-theme="dark"]) .tfe-case .shared-work,
+:where(html[data-theme="dark"]) .tfe-case .handoff-return,
+:where(html[data-theme="dark"]) .tfe-case #phase-one .target-comparison,
+:where(html[data-theme="dark"]) .tfe-case .setup-time-result { background:#193b30; color:var(--ink); }
+:where(html[data-theme="dark"]) .tfe-case .shared-work strong,
+:where(html[data-theme="dark"]) .tfe-case #phase-one .target-numbers strong,
+:where(html[data-theme="dark"]) .tfe-case #phase-one .target-comparison h3,
+:where(html[data-theme="dark"]) .tfe-case .setup-time-result h3 { color:var(--ink); }
+:where(html[data-theme="dark"]) .tfe-case #phase-one .target-numbers>div:last-child strong { color:var(--lime); }
+:where(html[data-theme="dark"]) .tfe-case .comparison-stage,
+:where(html[data-theme="dark"]) .tfe-case .about-evidence,
+:where(html[data-theme="dark"]) .tfe-case .managed-owner { background:var(--mist); }
+:where(html[data-theme="dark"]) .tfe-case .ibm-cell,
+:where(html[data-theme="dark"]) .tfe-case .setup-flow-ibm { background:#203b30; border-color:var(--line); }
+:where(html[data-theme="dark"]) .tfe-case .user-type,
+:where(html[data-theme="dark"]) .tfe-case .summary-result strong { color:var(--teal); }
+:where(html[data-theme="dark"]) .tfe-case #validation .big-quote cite { color:var(--muted); }
+:where(html[data-theme="dark"]) .tfe-case .project-status { color:var(--teal); background:var(--mist); border-color:var(--control-line); }
+:where(html[data-theme="dark"]) .tfe-case .flow-platform,
+:where(html[data-theme="dark"]) .tfe-case .flow-count { color:var(--muted); }
+:where(html[data-theme="dark"]) .tfe-case .flow-number { background:var(--mist); color:var(--ink); }
+:where(html[data-theme="dark"]) .tfe-case .setup-flow-ibm .flow-number { background:var(--teal); color:var(--on-accent); }
+:where(html[data-theme="dark"]) .tfe-case .flow-managed-label { background:#334c36; color:var(--ink); }
+:where(html[data-theme="dark"]) .tfe-case .flow-steps li:not(:last-child)::after { background:var(--control-line); }
+:where(html[data-theme="dark"]) .tfe-case .reflection-takeaway { background:#294a3c; border:1px solid #526e50; }
+:where(html[data-theme="dark"]) .tfe-case .reflection-takeaway p { color:var(--ink); }
+:where(html[data-theme="dark"]) .tfe-case .screen-link { background:var(--surface); }
+:where(html[data-theme="dark"]) .tfe-case .media-stage { background:linear-gradient(135deg,#24352f,#192822); }
+:where(html[data-theme="dark"]) .tfe-case .media-status { color:var(--body-ink); background:var(--surface); }
+:where(html[data-theme="dark"]) .tfe-case .impact-icon { --teal:#7fd7c0; --ink:#11251d; --lime:#d9ec8a; }
+:where(html[data-theme="dark"]) .tfe-case .expected-impact-grid article:hover .impact-icon,
+:where(html[data-theme="dark"]) .tfe-case .expected-impact-grid article:focus-within .impact-icon,
+:where(html[data-theme="dark"]) .tfe-case .expected-impact-grid article:has(.impact-icon[aria-pressed=true]) .impact-icon { border-color:var(--teal); }
+
+/* The original CDF route uses a separate layout but the same color system. */
+:where(html[data-theme="dark"]) .theme-cdf .hero-image { background:var(--surface); }
+:where(html[data-theme="dark"]) .theme-cdf .section-copy p,
+:where(html[data-theme="dark"]) .theme-cdf .learning p { color:var(--body-ink); }
+:where(html[data-theme="dark"]) .theme-cdf .solution { background:#1a2c25; }
+:where(html[data-theme="dark"]) .theme-cdf .screen img,
+:where(html[data-theme="dark"]) .theme-cdf .screen .screen-art.tall { border-color:var(--line); background:var(--surface); }
+:where(html[data-theme="dark"]) .theme-cdf .next { background:#203b30; color:var(--ink); }
+:where(html[data-theme="dark"]) .theme-cdf .next-label { color:var(--lime); }
+:where(html[data-theme="dark"]) .theme-cdf .next a:hover { color:var(--teal); }
+
+/* A readable dark résumé on the web; the linked PDF remains suitable for printing. */
+:where(html[data-theme="dark"]) .resume-toolbar .download-link { color:var(--on-accent); background:linear-gradient(115deg,var(--lime),var(--teal)); }
+:where(html[data-theme="dark"]) .resume-toolbar .download-link:hover { background:var(--lime); color:var(--on-accent); }
