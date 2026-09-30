@@ -113,11 +113,14 @@
   .steps8 b{display:block;font-family:var(--head);font-size:15px;margin-bottom:3px}.steps8 span{color:var(--muted);font-size:13.5px}.steps8 li:last-child span{color:#c7d3ce}
   .boxed{background:var(--mist);border-radius:var(--r);padding:42px 40px 38px}
   .next{margin-top:150px;padding-bottom:40px}
-  .next-card{display:block;background:var(--mist);border-radius:var(--r);padding:36px 38px;text-decoration:none;color:var(--ink)}
+  .next-card{--next-card-shadow:0 15px 35px rgba(23,39,36,.12);display:block;background:var(--mist);border-radius:var(--r);padding:30px 38px;text-decoration:none;color:var(--ink);transition:transform .2s ease,box-shadow .2s ease}
   .next-card small{display:block;font-family:var(--label);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
-  .next-card span{font-family:var(--head);font-weight:700;font-size:clamp(28px,4vw,46px);letter-spacing:-.04em;line-height:1.05;display:block}
-  .next-card em{display:inline-block;margin-top:20px;font-style:normal;font-family:var(--label);font-weight:500;font-size:15px;background:var(--lime);padding:9px 18px;border-radius:99px}
-  .next-card:hover span{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px}
+  .next-card .next-title{font-family:var(--head);font-weight:700;font-size:clamp(1.625rem,3.2vw,2.25rem);letter-spacing:-.04em;line-height:1.15;display:block}
+  .next-card .next-action{display:inline-flex;margin-top:16px;font-family:var(--body);font-weight:700;font-size:1rem;line-height:1.55;color:inherit;border-bottom:1px solid currentColor;padding-bottom:5px}
+  :where(html[data-theme="dark"]) .next-card{--next-card-shadow:0 15px 35px #0004}
+  .next-card:focus-visible{transform:translateY(-3px);box-shadow:var(--next-card-shadow);border-radius:var(--r)}
+  @media(hover:hover){.next-card:hover{transform:translateY(-3px);box-shadow:var(--next-card-shadow)}}
+  @media(prefers-reduced-motion:reduce){.next-card{transition:none}.next-card:hover,.next-card:focus-visible{transform:none}}
   .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14.5px;color:var(--muted);border-top:1.5px solid var(--line);margin-top:40px;padding-top:22px}
   @media (max-width:900px){
     .facts{grid-template-columns:1fr 1fr}
@@ -141,6 +144,7 @@
     .journey,.boxed{padding:30px 22px}
     .facts{padding:24px}
     .big-quote{padding:30px 26px}
+    .next-card{padding:24px}
     .results td{padding:18px}.results td.v{font-size:30px}
   }
   @media (max-width:400px){.site nav a:not(.cta){display:none}}

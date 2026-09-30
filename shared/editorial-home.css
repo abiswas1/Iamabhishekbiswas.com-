@@ -1,0 +1,129 @@
+/* A shorter route from introduction to evidence, using the existing palette. */
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.intro-stack{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:36px;align-items:center;max-width:1440px;margin:auto;padding:64px clamp(22px,5vw,80px)}
+.intro-stack .hero{display:block;margin:0;padding:0;min-width:0;background:transparent}
+.hero .eyebrow{font-size:.875rem;letter-spacing:.08em}
+.hero h1{font-size:clamp(2.8rem,4.25vw,4rem);line-height:1.08;letter-spacing:-.055em;margin:22px 0 24px;max-width:650px}
+.hero-bottom{display:block}
+.hero-intro{font-size:1.125rem;line-height:1.55;max-width:560px}
+.hero-aside{font-size:1rem;line-height:1.6;color:var(--muted);margin-top:16px}
+.hero-work-link{display:inline-flex;align-items:center;min-height:48px;margin-top:24px;padding:11px 21px;border:1px solid var(--ink);border-radius:999px;text-decoration:none;font-weight:600;color:var(--ink)}
+.hero-work-link:hover{background:var(--ink);color:var(--paper)}
+.intro-stack .illustration{position:relative;top:auto;border-radius:24px;width:100%;aspect-ratio:595/317;align-self:center}
+.intro-stack .illustration>img,.intro-stack .illustration .motion{width:100%;height:100%;object-fit:cover;object-position:center}
+.intro-stack .illustration .motion.desktop{display:block}
+.intro-stack .illustration .motion.mobile{display:none}
+.work{padding-top:64px;padding-bottom:72px}
+.section-heading{margin-bottom:30px}
+.section-heading h2,.process h2,.career-heading h2{font-size:clamp(2.25rem,4vw,3.5rem)}
+.section-heading>p,.process-intro>p{font-size:1.125rem;line-height:1.6;max-width:720px}
+.projects{grid-auto-rows:auto;gap:24px}
+.projects .project .project-visual{aspect-ratio:2.1/1}
+.projects .project .project-top{padding:22px 26px 0}
+.projects .project .project-content{padding:18px 26px 26px}
+.projects .project .project-content h3{font-size:clamp(1.65rem,2.3vw,2.2rem);line-height:1.15;margin-bottom:14px}
+.projects .project .project-content p{max-width:none;font-size:1rem;line-height:1.5}
+.projects .project .project-content .client{margin-bottom:8px;font-size:.875rem}
+.projects .project .project-content .outcome{font-size:.9rem;margin-bottom:18px}
+.projects .project:last-child{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr}
+.projects .project:last-child .project-visual{grid-column:1;grid-row:1/3;aspect-ratio:auto;height:100%;min-height:320px}
+.projects .project:last-child .project-top,.projects .project:last-child .project-content{grid-column:2}
+.projects .project:last-child .project-hit{position:absolute}
+.process{padding-block:72px}
+.process-intro{margin-bottom:32px}
+.process-steps{row-gap:18px}
+.process-steps li{padding:24px 20px}
+.process-icon{width:52px;height:52px;border-radius:15px}
+.process-icon svg{width:30px;height:30px}
+.process-steps h3{font-size:1.4rem}
+.career{padding-block:72px}
+.career-heading{margin-bottom:36px}
+.career .career-list,.career .career-earlier{width:100%;max-width:1020px}
+.career-entry{padding-bottom:28px}
+.career-entry h3{font-size:1.65rem}
+.career-role{margin-bottom:8px}
+.career-assignment{margin-top:14px;padding-top:14px}
+.career-gap .career-entry{padding-bottom:22px}
+.career-earlier{margin-top:12px;padding-top:20px}
+.career-earlier summary{padding-block:10px;min-height:44px}
+.career-earlier .career-stage{position:static;display:block;margin-bottom:8px}
+.career-earlier .career-list{margin-top:24px}
+@media(max-width:1100px){.intro-stack{gap:26px;padding-block:48px}.hero h1{font-size:clamp(2.6rem,4.6vw,3.5rem)}}
+@media(max-width:900px){.intro-stack{grid-template-columns:1fr;padding:40px clamp(22px,5vw,48px);gap:32px}.hero h1{font-size:clamp(2.6rem,6.5vw,3.75rem);max-width:760px}.hero-intro{max-width:680px}.intro-stack .illustration{max-width:760px}.hero-aside br{display:none}.hero-aside br:after{content:' '}}
+@media(max-width:780px){.projects .project:last-child{display:flex;grid-column:auto}.projects .project:last-child .project-visual{aspect-ratio:2.1/1;min-height:0;height:auto}.projects .project .project-top{padding:20px 22px 0;flex-wrap:wrap;gap:8px}.projects .project .project-content{padding:16px 22px 24px}.work,.process,.career{padding-block:48px}.hero h1{letter-spacing:-.05em}.hero-aside{margin-top:14px}.intro-stack .illustration{border-radius:18px}.process-intro{margin-bottom:28px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Restore the original introduction and let the full illustration carry its details. */
+.intro-stack{grid-template-columns:minmax(0,1fr);gap:40px;padding-top:48px;padding-bottom:56px}
+.intro-stack .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:48px;align-items:start}
+.hero .eyebrow{grid-column:1/-1}
+.hero h1{grid-column:1;margin:22px 0 0;font-size:clamp(2.8rem,4.5vw,4.2rem);max-width:none}
+.hero .hero-bottom{grid-column:2;margin-top:24px}
+.hero-intro{font-size:1.125rem;max-width:none}
+.hero-aside{margin-top:18px;font-size:1rem;color:var(--muted)}
+.intro-stack .illustration{max-width:none;aspect-ratio:595/317;width:100%}
+@media(max-width:900px){.intro-stack{gap:30px;padding-top:36px;padding-bottom:40px}.intro-stack .hero{display:block}.hero h1{margin:18px 0 22px;font-size:clamp(2.6rem,6.5vw,3.75rem);max-width:760px}.hero .hero-bottom{margin-top:0}.hero-intro{font-size:1.1rem}.hero-aside{margin-top:16px}}
+
+.career-location{color:var(--muted);font-size:.9rem;line-height:1.5;margin:0 0 12px}
+
+/* Full-width artwork stays behind the existing two-column introduction. */
+.intro-stack{display:block;max-width:none;margin:0;padding:0}
+/* The following work section extends the pin boundary beyond the full cover. */
+.intro-foreground{position:relative;z-index:1;background:var(--paper);display:flow-root}
+.intro-stack .illustration{position:sticky;top:0;z-index:0;max-width:none;width:100%;height:clamp(260px,45vw,650px);aspect-ratio:auto;border-radius:0}
+.intro-stack .illustration>img,.intro-stack .illustration .motion{width:100%;height:100%;object-fit:cover;object-position:center}
+.intro-stack .hero{position:relative;z-index:1;width:100%;max-width:none;margin:0;padding-block:48px 56px;padding-inline:max(clamp(22px,5vw,80px),calc((100vw - 1440px)/2 + 80px));background:var(--paper)}
+.hero-lead{grid-column:1;min-width:0}
+.hero-lead h1{margin-bottom:0}
+@media(max-width:900px){
+  .intro-stack .illustration{height:clamp(230px,52vw,380px)}
+  .intro-stack .illustration>img{object-position:right center}
+  .intro-stack .illustration .motion.desktop{display:none}
+  .intro-stack .illustration .motion.mobile{display:block}
+  .intro-stack .hero{padding-block:36px 40px}
+  .hero-lead{margin-bottom:26px}
+}
+
+/* Paired cards share their copy, divider, outcome and link row heights. */
+@media(min-width:781px){
+  .projects{row-gap:0}
+  .projects .project:not(:last-child){display:grid;grid-row:span 7;grid-template-rows:subgrid;row-gap:0;margin-bottom:24px}
+  .projects .project:not(:last-child) .project-visual{grid-row:1}
+  .projects .project:not(:last-child) .project-top{grid-row:2}
+  .projects .project:not(:last-child) .project-content{display:grid;grid-row:3 / span 5;grid-template-rows:subgrid;row-gap:0;min-width:0}
+  .projects .project:not(:last-child) .text-link{justify-self:start;align-self:start}
+}
+
+/* Keep the portrait in its own grid tracks, including narrow landscape views. */
+.about .about-layout{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.about .about-copy{grid-column:1;grid-row:1;min-width:0;max-width:100%;width:100%}
+.about .portrait-frame{grid-column:2;grid-row:1;min-width:0;width:100%;max-width:100%;margin-inline:0}
+.about h2,.about p{max-width:100%;overflow-wrap:break-word}
+@media(max-width:780px){
+  .about .about-layout{grid-template-columns:minmax(0,1fr);gap:26px}
+  .about .about-copy{grid-column:1;grid-row:1;padding:40px 0 0}
+  .about .portrait-frame{grid-column:1;grid-row:2;align-self:stretch;width:100vw;max-width:none;margin-left:calc(50% - 50vw)}
+  .about .portrait{position:static;inset:auto;height:auto;aspect-ratio:4/4.7;object-position:right 35%}
+}
+@media(max-width:460px){.about{padding-top:0}.about .about-copy{padding-top:48px}}
+
+/* Long About sections scroll fully before Contact slides over their lower edge. */
+.about-contact-stack .about,.about-contact-stack.can-pin .about{position:sticky;top:var(--about-pin-top,0px);z-index:0}
+.about-contact-stack .contact{position:relative;z-index:1}
+
+/* Link-like disclosure, with no surrounding card or filled control. */
+.career-earlier summary{padding:10px 0;min-height:44px;border:0;border-radius:0;background:transparent;color:#006b60;cursor:pointer;font-weight:600}
+.career-earlier summary:hover{color:#004f48;text-decoration:underline;text-underline-offset:4px}
+.career-earlier summary:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+:where(html[data-theme="dark"]) .career-earlier summary{color:#7fd7c0}
+:where(html[data-theme="dark"]) .career-earlier summary:hover{color:#abead9}
+
+/* A single secondary résumé action, scoped above the contact link colours. */
+html[data-theme] .theme-home #top a.resume-secondary{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 22px;border:1px solid #000;border-radius:999px;background:transparent;color:#000;font:600 1rem/1.25 'Space Grotesk',sans-serif;letter-spacing:0;text-decoration:none;transition:background-color .2s ease,color .2s ease}
+html[data-theme="dark"] .theme-home #top a.resume-secondary:where(.hero-work-link){color:var(--ink);border-color:var(--ink)}
+html[data-theme] .theme-home #top a.resume-secondary:hover,
+html[data-theme] .theme-home #top a.resume-secondary:focus-visible{background:#000;color:#fff;border-color:#000}
+html[data-theme="dark"] .theme-home #top a.resume-secondary:where(.hero-work-link):hover,
+html[data-theme="dark"] .theme-home #top a.resume-secondary:where(.hero-work-link):focus-visible{background:#fff;color:#000;border-color:#fff}
+html[data-theme] .theme-home #top a.resume-secondary span[aria-hidden]{color:inherit;line-height:1;font-size:1.1em}
+@media(prefers-reduced-motion:reduce){html[data-theme] .theme-home #top a.resume-secondary{transition:none}}
