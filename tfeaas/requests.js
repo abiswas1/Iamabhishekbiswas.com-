@@ -14,6 +14,7 @@
   const section = document.getElementById('case-request-online');
   const status = document.getElementById('case-request-message');
   const button = form.querySelector('[type="submit"]');
+  const buttonLabel = document.getElementById('case-request-label');
   const feedback = document.getElementById('case-request-feedback');
   const title = document.getElementById('case-request-feedback-title');
   const copy = document.getElementById('case-request-feedback-copy');
@@ -152,7 +153,7 @@
     if (submittedValues && submittedValues !== values) requestId = crypto.randomUUID();
     submittedValues = values;
     button.disabled = true;
-    button.textContent = 'Sending request…';
+    buttonLabel.textContent = 'Sending request…';
     form.setAttribute('aria-busy', 'true');
     message('Sending your request to Abhishek…');
     try {
@@ -168,7 +169,7 @@
     } catch (error) {
       message(error instanceof TypeError ? 'Couldn’t confirm your request. Try again or use the email link below.' : error.message, true);
       button.disabled = false;
-      button.textContent = 'Request access';
+      buttonLabel.textContent = 'Request access';
     } finally { form.setAttribute('aria-busy', 'false'); }
   });
   document.addEventListener('visibilitychange', () => { if (document.hidden) clearTimeout(timer); else checkStatus(); });
@@ -181,7 +182,7 @@
       receipt = null; save();
       passwordMode = false;
       requestId = crypto.randomUUID(); submittedValues = '';
-      button.disabled = !enabled; button.textContent = 'Request access';
+      button.disabled = !enabled; buttonLabel.textContent = 'Request access';
       form.reset(); message(''); render();
     } else checkStatus();
   });

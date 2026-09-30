@@ -41,7 +41,7 @@
 <link rel="alternate icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=193">
 <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192.png?v=193">
 <link rel="stylesheet" href="/tfeaas/access.css?v=203">
-<script src="/tfeaas/requests.js?v=203" defer></script>
+<script src="/tfeaas/requests.js?v=205" defer></script>
 <script src="/tfeaas/access.js?v=202" defer></script>
 </head>
 <body class="theme-case visual-case tfe-case has-case-navigation">
@@ -85,7 +85,7 @@
     <div class="case-request-online" id="case-request-online">
       <form id="case-request-form"><fieldset>
         <label for="case-request-email">Your email</label>
-        <div class="case-access-fields"><input id="case-request-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@company.com" aria-describedby="case-request-privacy case-request-message"><button class="case-unlock" type="submit" disabled>Request access</button></div>
+        <div class="case-access-fields"><input id="case-request-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@company.com" aria-describedby="case-request-privacy case-request-message"><button class="case-unlock" type="submit" disabled><span id="case-request-label">Request access</span><svg class="case-unlock-action-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></button></div>
         <details class="case-request-extra"><summary>Add a name or note (optional)</summary><label for="case-request-name">Name</label><input id="case-request-name" name="name" autocomplete="name" maxlength="100"><label for="case-request-reason">What brings you here?</label><textarea id="case-request-reason" name="reason" rows="3" maxlength="500"></textarea></details>
         <div class="case-request-trap" aria-hidden="true"><label for="case-request-website">Website</label><input id="case-request-website" name="website" tabindex="-1" autocomplete="off"></div>
       </fieldset><p class="case-access-message" id="case-request-message" role="status" aria-live="polite"></p></form>
