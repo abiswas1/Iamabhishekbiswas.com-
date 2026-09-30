@@ -2,8 +2,8 @@
  const nav=document.querySelector('.case-navigation');
  if(!nav)return;
  const header=document.querySelector('.portfolio-header');
- const links=[...nav.querySelectorAll('a[href^="#"]')];
- const sections=links.map(link=>document.getElementById(link.hash.slice(1)));
+ let links=[...nav.querySelectorAll('a[href^="#"]')];
+ let sections=links.map(link=>document.getElementById(link.hash.slice(1)));
  const compact=matchMedia('(max-width:1180px)');
  const reduced=matchMedia('(prefers-reduced-motion:reduce)');
  let pending=false;
@@ -33,6 +33,11 @@
  addEventListener('resize',schedule);
  addEventListener('hashchange',schedule);
  addEventListener('load',schedule,true);
+ document.addEventListener('case-content-ready',()=>{
+  links=[...nav.querySelectorAll('a[href^="#"]')];
+  sections=links.map(link=>document.getElementById(link.hash.slice(1)));
+  schedule();
+ });
  compact.addEventListener('change',schedule);
  if(header){new MutationObserver(schedule).observe(header,{attributes:true,attributeFilter:['class']});new ResizeObserver(schedule).observe(header);}
  update();

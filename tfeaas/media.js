@@ -1,6 +1,8 @@
 (() => {
   document.documentElement.classList.add('media-ready');
-  document.querySelectorAll('.media-stage img').forEach(image => {
+  window.initializeCaseMedia = (root = document) => root.querySelectorAll('.media-stage img').forEach(image => {
+    if (image.dataset.privateSrc || image.dataset.mediaInitialized) return;
+    image.dataset.mediaInitialized = 'true';
     const stage = image.closest('.media-stage');
     const status = stage.querySelector('.media-status');
     const loaded = () => {
@@ -23,4 +25,5 @@
     image.addEventListener('error', failed);
     if (image.complete) image.naturalWidth ? loaded() : failed();
   });
+  window.initializeCaseMedia();
 })();

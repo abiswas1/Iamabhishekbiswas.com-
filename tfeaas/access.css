@@ -1,0 +1,102 @@
+/* The private-case-study invitation shares the contact section's accent surface. */
+.case-access[hidden],#case-private-content[hidden],.case-access-session[hidden]{display:none!important}
+.tfe-case .case-access{scroll-margin-top:150px;padding-bottom:0}
+/* The locked invitation needs one section gap before the next project. */
+.tfe-case .case-main:has(> #case-access:not([hidden])) + .next{margin-top:clamp(32px,4vw,56px)}
+.case-access-card{
+  --ink:#172724;--body-ink:#233e32;--muted:#365347;--teal:#174f43;--focus:#174f43;
+  width:100%;max-width:none;padding:clamp(28px,4vw,48px);border:0;border-radius:var(--r,28px);
+  color:var(--ink);color-scheme:light;
+  background:var(--contact-gradient,linear-gradient(115deg,#dcf363 0%,#a9e39a 52%,#68cbb0 100%));
+  background-size:200% 200%;background-position:50% 50%;
+  animation:contact-gradient-drift 6s ease-in-out infinite alternate;
+}
+.case-access-icon{display:block;width:36px;height:36px;color:var(--ink);margin-bottom:20px}
+.tfe-case .case-access-card .eyebrow{color:#294b3b;font-size:14px;margin-bottom:16px}
+.tfe-case .case-access-card h2{font-size:clamp(32px,4.2vw,54px);line-height:1.06;letter-spacing:-.045em;max-width:900px;margin:0 0 16px;color:var(--ink);text-wrap:balance}
+.tfe-case .case-access-card p{font-size:18px;line-height:1.5;max-width:62ch;color:var(--body-ink)}
+.case-access-card form{margin-top:28px}
+.case-access-card label{display:block;font:700 14px/1.5 var(--label);letter-spacing:.1em;text-transform:uppercase;color:#294b3b;margin-bottom:12px}
+.case-access-fields{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:stretch;gap:16px;max-width:760px}
+.case-password-wrap{position:relative;min-width:0}
+.case-password-wrap input{
+  box-sizing:border-box;width:100%;height:60px;padding:16px 82px 16px 22px;
+  border:1.5px solid #3f6b5b;border-radius:20px;background:#f4f5f1;color:#172724;
+  font:400 20px/1.4 var(--body);transition:border-color .2s ease,box-shadow .2s ease;
+}
+.case-password-wrap input:hover{border-color:#172724}
+.case-password-wrap input[aria-invalid="true"]{border-color:#852125}
+.case-password-wrap button{position:absolute;right:8px;top:8px;min-width:62px;min-height:44px;border:0;border-radius:999px;background:transparent;color:#174f43;font:600 14px var(--body);cursor:pointer}
+.case-password-wrap button:hover{background:#e2e9e5}
+/* Match the dark, rounded button inside Get in Touch in both colour themes. */
+.case-unlock{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:16px 28px;border:1px solid #172724;border-radius:999px;background:#172724;color:#f4f5f1;font:600 16px/1.25 var(--label);letter-spacing:0;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease}
+.case-unlock:hover,.case-unlock:focus-visible{background:#123b39;color:#fff;border-color:#123b39}
+.case-unlock:disabled{cursor:wait;opacity:.7}
+.case-access-card :is(button,a):focus-visible,.case-access-session button:focus-visible{outline:3px solid var(--focus,#174f43);outline-offset:5px}
+.tfe-case .case-access-message{margin:12px 0 0;min-height:1.6em;font-size:16px;color:var(--body-ink)}
+.tfe-case .case-access-message[data-error="true"]{color:#852125}
+.tfe-case .case-access-request{max-width:none;margin:0;padding:0;border:0;font-size:14px;line-height:1.5}
+.case-access-request a{display:inline-flex;align-items:center;min-height:44px;color:var(--body-ink);font:500 14px/1.5 var(--body);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;overflow-wrap:anywhere}
+.case-access-request a:hover{color:#174f43}
+.case-access-session{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:24px;padding-bottom:36px;color:var(--muted);font-size:14px}
+.case-access-session button{min-height:44px;border:1px solid var(--muted);border-radius:999px;background:transparent;color:var(--ink);padding:12px 22px;font:600 14px var(--label);cursor:pointer}
+@media(max-width:640px){
+  .case-access-fields{grid-template-columns:minmax(0,1fr);gap:14px}
+  .case-unlock{width:100%;min-height:56px}
+  .case-password-wrap input{height:56px;font-size:18px;padding-left:18px}
+  .case-password-wrap button{top:6px;right:6px}
+  .case-access-session{flex-wrap:wrap}
+  .case-access-card{padding:30px 24px;border-radius:24px}
+  .case-access-icon{margin-bottom:22px}
+  .case-access-card form{margin-top:30px}
+}
+@media(prefers-reduced-motion:reduce){.case-access-card{animation:none;background-size:100% 100%}.case-access-card :is(input,button){transition:none}}
+.case-request-online[hidden],.case-review-page [hidden]{display:none!important}
+.case-request-online{margin-top:28px;padding:0;border:0;scroll-margin-top:160px}
+.tfe-case .case-request-online h3{font-size:clamp(24px,3vw,32px);color:var(--ink)}
+.tfe-case .case-request-online>p{font-size:18px;max-width:60ch}
+.case-access-card #case-request-form{margin-top:0}
+.case-request-online fieldset{margin:0;padding:0;border:0;min-width:0}
+.case-request-online :is(input,textarea){box-sizing:border-box;display:block;width:100%;min-width:0;max-width:100%;min-height:60px;padding:14px 20px;border:1.5px solid #3f6b5b;border-radius:20px;background:#f4f5f1;color:#172724;font:400 18px/1.5 var(--body)}
+.case-access-card :is(input,textarea):focus{border-color:transparent;outline:2px solid var(--focus);outline-offset:2px;box-shadow:none}
+.case-access-card input[aria-invalid="true"]:focus{outline-color:#852125}
+.case-request-online textarea{resize:vertical}
+.case-request-online input::placeholder{color:#596761}
+.case-request-extra{margin:8px 0 0;max-width:680px}
+.case-request-extra summary{cursor:pointer;color:#174f43;font-size:16px;min-height:44px;line-height:1.5;padding:10px 0}
+.case-request-extra label{margin-top:20px}
+.case-request-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.tfe-case .case-request-privacy{font-size:14px;margin:8px 0 0;max-width:none}
+.case-request-secondary{border:1px solid #172724;border-radius:999px;background:transparent;color:#172724;padding:16px 26px;font:600 16px/1.25 var(--label);min-height:56px;cursor:pointer}
+.case-request-secondary:disabled{opacity:.6;cursor:default}
+.case-review-page{padding:32px 0 64px}
+.review-brand{display:inline-flex;align-items:center;gap:12px;font:700 20px var(--head);text-decoration:none;color:var(--ink);margin:0 0 36px}
+.review-brand img{width:36px;height:36px}
+.case-review-page h1{font-size:clamp(36px,5vw,58px);color:#172724}
+.review-details{display:grid;gap:24px;margin:28px 0 36px}
+.review-details dt{font:700 14px/1.5 var(--label);text-transform:uppercase;letter-spacing:.1em;color:#294b3b}
+.review-details dd{margin:6px 0 0;font-size:20px;line-height:1.5;color:#172724;overflow-wrap:anywhere;white-space:pre-wrap}
+.review-actions{display:flex;gap:16px;flex-wrap:wrap}
+/* Completed requests become a compact next step instead of a disabled form. */
+.case-access-card [hidden]{display:none!important}
+.case-access-card.has-request-state{padding:clamp(28px,4vw,48px)}
+.case-request-feedback,#case-access-form{scroll-margin-top:160px}
+.case-request-check{display:block;margin-bottom:20px;color:#174f43}
+.tfe-case .case-request-feedback h2{font-size:clamp(30px,4vw,46px);margin:0 0 14px;letter-spacing:-.035em}
+.tfe-case .case-request-feedback p{font-size:18px;line-height:1.5;margin:0 0 24px;max-width:48ch}
+.case-request-feedback .case-unlock{min-height:52px}
+
+
+/* One primary task, with a quiet switch for returning visitors. */
+.case-access-options{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;column-gap:24px;row-gap:0;margin-top:16px;max-width:760px}
+.case-access-mode{min-height:44px;padding:8px 0;background:transparent;border:0;color:var(--body-ink);font:500 14px/1.5 var(--body);text-align:left;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;cursor:pointer}
+.case-access-mode:hover,.case-access-request a:hover{color:#172724}
+.tfe-case .case-access-message:empty{display:none}
+.case-unlock-action-icon{flex-shrink:0;transition:transform .18s ease}
+.case-lock-shackle{transform-origin:8px 10px;transition:transform .24s ease}
+#case-access-form .case-unlock:hover .case-lock-shackle,#case-access-form .case-unlock:focus-visible .case-lock-shackle{transform:rotate(-15deg) translateY(-1px)}
+#case-access-form .case-unlock:active .case-unlock-action-icon{transform:scale(.88)}
+#case-access-form[aria-busy="true"] .case-lock-shackle{animation:case-lock-check .8s ease-in-out infinite alternate}
+@keyframes case-lock-check{from{transform:rotate(-8deg)}to{transform:rotate(-22deg) translateY(-1px)}}
+@media(max-width:640px){.case-request-online :is(input,textarea){min-height:56px}.case-access-options{align-items:flex-start;flex-direction:column}.case-access-options .case-access-request{margin:0}.case-request-online{margin-top:24px}}
+@media(prefers-reduced-motion:reduce){.case-unlock-action-icon,.case-lock-shackle{transition:none!important;animation:none!important;transform:none!important}}
