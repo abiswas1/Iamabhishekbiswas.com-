@@ -30,7 +30,7 @@
    const y=window.scrollY;
    const change=y-lastScrollY;
    if(y<=20||change<-6)header.classList.remove('is-hidden');
-   else if(y>120&&change>6&&!header.classList.contains('menu-open')&&!header.contains(document.activeElement))header.classList.add('is-hidden');
+   else if(y>120&&change>6&&!header.classList.contains('menu-open')&&!header.querySelector(':focus-visible'))header.classList.add('is-hidden');
    if(scrollTopButton)scrollTopButton.classList.toggle('is-visible',y>500);
    if(y<=20||Math.abs(change)>6)lastScrollY=y;
    headerFramePending=false;

@@ -26,7 +26,8 @@
 .portfolio-menu-toggle{display:none;align-items:center;justify-content:center;flex:none;width:40px;height:40px;padding:0;border:0;border-radius:50%;background:transparent;color:#172724;cursor:pointer}
 .portfolio-menu-toggle:hover{background:#e0ece7}.portfolio-menu-toggle:focus-visible{outline:3px solid #008f82;outline-offset:3px}
 .portfolio-menu-toggle svg{display:block}.menu-close{display:none}.portfolio-header.menu-open .menu-lines{display:none}.portfolio-header.menu-open .menu-close{display:block}
-.portfolio-header.menu-open,.portfolio-header:focus-within{transform:none}
+/* Keep keyboard focus visible without pinning the bar after a mouse click. */
+.portfolio-header.menu-open,.portfolio-header:has(:focus-visible){transform:none}
 .portfolio-scroll-top{position:fixed;right:clamp(16px,3vw,36px);bottom:calc(18px + env(safe-area-inset-bottom));z-index:60;display:grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid rgba(220,243,99,.35);border-radius:50%;background:rgba(23,39,36,.9);color:#dcf363;box-shadow:0 7px 22px rgba(23,39,36,.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .2s ease,transform .2s ease,visibility .2s ease,background .2s ease}
 .portfolio-scroll-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
 .portfolio-scroll-top:hover{background:#0d574e;transform:translateY(-3px)}

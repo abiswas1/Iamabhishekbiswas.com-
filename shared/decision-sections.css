@@ -1,0 +1,46 @@
+/* Decision, reasoning and evidence sit in the page's existing reading flow. */
+.decision-story { margin-bottom: 32px; }
+.decision-story-inset { margin-top: 44px; }
+.decision-story > h2 { max-width: 970px; }
+.decision-story > .decision-story-title {
+  max-width: 860px;
+  margin: 0 0 22px;
+  font-size: clamp(1.75rem, 3.1vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+.decision-story > .decision-intro { max-width: 850px; }
+.decision-reasoning {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 40px;
+  margin: 28px 0 24px;
+}
+.decision-reasoning h3,
+.decision-reasoning h4 {
+  margin: 0 0 10px;
+  font-family: var(--head);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.decision-reasoning p { margin: 0; }
+.decision-story .decision-role {
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--body-ink);
+}
+.decision-role strong { margin-right: .4em; color: var(--ink); }
+.decision-story .decision-evidence { max-width: 860px; margin: 32px auto 0; }
+.decision-story .screen-link:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 5px;
+}
+@media (max-width: 680px) {
+  .decision-reasoning { grid-template-columns: 1fr; gap: 22px; }
+  .decision-story-inset { margin-top: 36px; }
+}
