@@ -38,7 +38,11 @@ html[data-theme="dark"] { scrollbar-color: var(--control-line) var(--paper); }
 :where(html[data-theme="dark"]) .portfolio-header .portfolio-nav a { color: var(--ink); }
 :where(html[data-theme="dark"]) .portfolio-brand b { color: var(--teal); }
 :where(html[data-theme="dark"]) .portfolio-header .portfolio-nav a:hover { color: var(--teal); }
-:where(html[data-theme="dark"]) .portfolio-header .portfolio-menu { background: var(--paper); border-color: var(--line); }
+:where(html[data-theme="dark"]) .portfolio-header .portfolio-menu { background: transparent; border-color: var(--line); }
+/* Only the expanded mobile menu needs its own surface; desktop links share the header. */
+@media(max-width:1100px) {
+  :where(html[data-theme="dark"]) .portfolio-header .portfolio-menu { background: var(--paper); }
+}
 :where(html[data-theme="dark"]) .portfolio-header .portfolio-menu a:hover { background: transparent; }
 :where(html[data-theme="dark"]) .portfolio-menu-toggle { color: var(--ink); }
 :where(html[data-theme="dark"]) .portfolio-menu-toggle:hover { background: var(--mist); }
