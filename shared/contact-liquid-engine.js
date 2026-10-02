@@ -110,7 +110,7 @@ export const shaders = {
   }`
 };
 
-export function createFluid(canvas, { compact = false } = {}) {
+export function createFluid(canvas, { compact = false, mobile = false } = {}) {
   const gl = canvas.getContext('webgl2', {
     alpha: false, antialias: false, depth: false, stencil: false,
     powerPreference: 'low-power', preserveDrawingBuffer: false
@@ -184,12 +184,12 @@ export function createFluid(canvas, { compact = false } = {}) {
   }
   function resize(width, height) {
     aspect = width / height;
-    const outputScale = Math.min(1.5, 1500 / width, 1100 / height);
+    const outputScale = mobile ? Math.min(1, 720 / width, 900 / height) : Math.min(1.5, 1500 / width, 1100 / height);
     const w = Math.max(1, Math.round(width * outputScale));
     const h = Math.max(1, Math.round(height * outputScale));
     if (canvas.width === w && canvas.height === h && flow) return;
     canvas.width = w;canvas.height = h;freeTargets();
-    const simSize = compact ? 128 : 224, dyeSize = compact ? 320 : 640;
+    const simSize = compact ? 128 : mobile ? 160 : 224, dyeSize = compact ? 320 : mobile ? 480 : 640;
     const simW = aspect >= 1 ? simSize : Math.round(simSize * aspect);
     const simH = aspect >= 1 ? Math.round(simSize / aspect) : simSize;
     const dyeW = aspect >= 1 ? dyeSize : Math.round(dyeSize * aspect);
@@ -213,7 +213,7 @@ export function createFluid(canvas, { compact = false } = {}) {
     draw('confine', flow.write, { source: flow.read, extra: curl, texel, dt });flow.swap();
     draw('divergence', divergence, { source: flow.read, texel });
     gl.bindFramebuffer(gl.FRAMEBUFFER, pressure.read.framebuffer);gl.clear(gl.COLOR_BUFFER_BIT);
-    for (let i = 0; i < (compact ? 10 : 14); i++) {
+    for (let i = 0; i < (compact || mobile ? 10 : 14); i++) {
       draw('pressure', pressure.write, { source: pressure.read, extra: divergence, texel });pressure.swap();
     }
     draw('project', flow.write, { source: flow.read, extra: pressure.read, texel });flow.swap();

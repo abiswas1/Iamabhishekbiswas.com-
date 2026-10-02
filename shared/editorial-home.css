@@ -157,12 +157,12 @@ html[data-theme="dark"] .hero-experience .hero-industries{color:#7fd7c0}
   .hero .eyebrow{margin-bottom:14px}
   .hero .hero-work-link{margin-top:20px}
 }
-@media(min-width:901px) and (max-width:1100px){.intro-stack{--hero-header-height:73px;gap:28px}}
-@media(max-width:900px){
-  .intro-stack{grid-template-columns:minmax(0,1fr);min-height:0;padding:36px clamp(22px,5vw,48px);gap:32px}
-  .intro-stack .hero{max-width:680px;grid-row:2}
+/* Smaller screens give the artwork the full page width, with normal text gutters below. */
+@media(max-width:1100px){
+  .intro-stack{--hero-gutter:clamp(22px,5vw,80px);grid-template-columns:var(--hero-gutter) minmax(0,1fr) var(--hero-gutter);min-height:0;padding:0 0 36px;gap:32px 0}
+  .intro-stack .hero{max-width:680px;grid-column:2;grid-row:2}
   .hero-lead h1{font-size:clamp(2.4rem,6.4vw,3.65rem);max-width:680px}
-  .intro-stack .illustration{grid-row:1;aspect-ratio:595/317;border-radius:18px}
+  .intro-stack .illustration{grid-column:1/-1;grid-row:1;aspect-ratio:595/317;border-radius:0}
 }
 
 /* Role and outcome remain aligned across neighbouring cards. */

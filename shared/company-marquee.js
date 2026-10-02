@@ -21,6 +21,9 @@
   let programmaticPosition = 0;
   let frame = 0;
   let previousTime = null;
+  let coastFrame = 0;
+  let coastTime = 0;
+  let coastVelocity = 0;
   let inView = false;
   let touching = false;
   let drag = null;
@@ -30,7 +33,7 @@
 
   const keyboardFocused = () => viewport.matches(':focus-visible');
   const canPlay = () => cycleWidth > 0 && inView && !document.hidden &&
-    !reducedMotion.matches && !touching && !drag &&
+    !reducedMotion.matches && !touching && !drag && !coastFrame &&
     !keyboardFocused() && performance.now() >= pausedUntil;
 
   function setPosition(nextPosition) {
@@ -39,13 +42,16 @@
     programmaticPosition = viewport.scrollLeft;
   }
   function normalize() {
-    if (!cycleWidth || touching || drag) return;
+    if (!cycleWidth || touching || drag || coastFrame) return;
     const phase = ((viewport.scrollLeft % cycleWidth) + cycleWidth) % cycleWidth;
     setPosition(cycleWidth + phase);
   }
   function stop() {
     cancelAnimationFrame(frame);
+    cancelAnimationFrame(coastFrame);
     frame = 0;
+    coastFrame = 0;
+    coastVelocity = 0;
     previousTime = null;
   }
   function tick(time) {
@@ -65,6 +71,27 @@
       position = viewport.scrollLeft;
       frame = requestAnimationFrame(tick);
     }
+  }
+  function coast(time) {
+    coastFrame = 0;
+    if (!inView || document.hidden || reducedMotion.matches || touching || drag || keyboardFocused()) return;
+    // Time-based friction feels the same on 60 Hz and 120 Hz displays.
+    const elapsed = Math.min(time - coastTime, 50);
+    const decay = Math.exp(-elapsed / 260);
+    const next = position + coastVelocity * 260 * (1 - decay);
+    const phase = ((next % cycleWidth) + cycleWidth) % cycleWidth;
+    setPosition(cycleWidth + phase);
+    coastVelocity *= decay;
+    coastTime = time;
+    if (Math.abs(coastVelocity) > .015) coastFrame = requestAnimationFrame(coast);
+    else { coastVelocity = 0; play(); }
+  }
+  function startCoast(velocity) {
+    if (reducedMotion.matches || !inView || document.hidden || Math.abs(velocity) < .04) return;
+    clearTimeout(settleTimer);
+    coastVelocity = Math.max(-2.4, Math.min(2.4, velocity));
+    coastTime = performance.now();
+    coastFrame = requestAnimationFrame(coast);
   }
   function pauseForBrowsing() {
     stop();
@@ -88,25 +115,38 @@
     if (!cycleWidth || event.pointerType !== 'mouse' || event.button !== 0) return;
     event.preventDefault();
     pauseForBrowsing();
-    drag = { id: event.pointerId, x: event.clientX };
+    drag = { id: event.pointerId, x: event.clientX, time: performance.now(), velocity: 0 };
     viewport.setPointerCapture(event.pointerId);
     viewport.classList.add('is-dragging');
   });
   viewport.addEventListener('pointermove', event => {
     if (!drag || event.pointerId !== drag.id) return;
-    const position = viewport.scrollLeft + drag.x - event.clientX;
+    const now = performance.now();
+    const distance = drag.x - event.clientX;
+    const elapsed = Math.max(1, Math.min(now - drag.time, 50));
+    const velocity = Math.max(-2.4, Math.min(2.4, distance / elapsed));
+    // Follow the pointer directly; only the release glides. Reversing the drag takes over immediately.
+    const blend = 1 - Math.exp(-elapsed / 40);
+    drag.velocity = Math.sign(velocity) !== Math.sign(drag.velocity)
+      ? velocity : drag.velocity + (velocity - drag.velocity) * blend;
+    drag.time = now;
     drag.x = event.clientX;
-    const phase = ((position % cycleWidth) + cycleWidth) % cycleWidth;
+    const phase = (((position + distance) % cycleWidth) + cycleWidth) % cycleWidth;
     setPosition(cycleWidth + phase);
     pauseForBrowsing();
   });
   function finishDrag(event) {
     if (!drag || event.pointerId !== drag.id) return;
+    const idle = performance.now() - drag.time;
+    // A held or cancelled drag stops exactly where it was left; only a fresh release coasts.
+    const velocity = event.type === 'pointerup' && idle < 100
+      ? drag.velocity * Math.exp(-idle / 80) : 0;
     drag = null;
     viewport.classList.remove('is-dragging');
     if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
     pauseForBrowsing();
-    settle();
+    startCoast(velocity);
+    if (!coastFrame) settle();
   }
   viewport.addEventListener('pointerup', finishDrag);
   viewport.addEventListener('pointercancel', finishDrag);

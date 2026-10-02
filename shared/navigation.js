@@ -1,7 +1,7 @@
 (() => {
  const header=document.querySelector('.portfolio-header');
+ if(!header)return;
  const toggle=header.querySelector('.portfolio-menu-toggle');
- const menu=header.querySelector('.portfolio-menu');
  function closeMenu(returnFocus=false){header.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation menu');if(returnFocus)toggle.focus();}
  toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';header.classList.toggle('menu-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');});
  header.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>closeMenu()));
@@ -21,25 +21,49 @@
   scrollTopButton.classList.toggle('is-visible',window.scrollY>500);
   scrollTopButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'}));
  }
- let lastScrollY=window.scrollY;
+ // Measure deliberate travel in one direction, not each tiny touch/trackpad reversal.
+ function scrollPosition(){
+  const bottom=Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
+  return Math.min(bottom,Math.max(0,window.scrollY));
+ }
+ let lastScrollY=scrollPosition();
+ let scrollDirection=0;
+ let directionTravel=0;
  let headerFramePending=false;
+ function resetScrollTracking(){
+  lastScrollY=scrollPosition();
+  scrollDirection=0;
+  directionTravel=0;
+ }
  window.addEventListener('scroll',()=>{
   if(headerFramePending)return;
   headerFramePending=true;
   requestAnimationFrame(()=>{
-   const y=window.scrollY;
+   // Clamp elastic overscroll so the rebound at a page edge is not an upward gesture.
+   const y=scrollPosition();
    const change=y-lastScrollY;
-   if(y<=20||change<-6)header.classList.remove('is-hidden');
-   else if(y>120&&change>6&&!header.classList.contains('menu-open')&&!header.querySelector(':focus-visible'))header.classList.add('is-hidden');
+   lastScrollY=y;
+   if(y<=20||header.classList.contains('menu-open')||header.querySelector(':focus-visible')){
+    header.classList.remove('is-hidden');
+    scrollDirection=0;
+    directionTravel=0;
+   }else if(change!==0){
+    const direction=Math.sign(change);
+    directionTravel=direction===scrollDirection?directionTravel+Math.abs(change):Math.abs(change);
+    scrollDirection=direction;
+    if(direction>0&&y>120&&directionTravel>=32)header.classList.add('is-hidden');
+    else if(direction<0&&directionTravel>=16)header.classList.remove('is-hidden');
+   }
    if(scrollTopButton)scrollTopButton.classList.toggle('is-visible',y>500);
-   if(y<=20||Math.abs(change)>6)lastScrollY=y;
    headerFramePending=false;
   });
  },{passive:true});
  window.addEventListener('pageshow',()=>{
-  lastScrollY=window.scrollY;
+  resetScrollTracking();
   header.classList.remove('is-hidden');
   if(scrollTopButton)scrollTopButton.classList.toggle('is-visible',lastScrollY>500);
  });
- header.addEventListener('focusin',()=>header.classList.remove('is-hidden'));
+ // A mobile browser toolbar resizing the viewport should not count as scrolling.
+ window.addEventListener('resize',resetScrollTracking,{passive:true});
+ header.addEventListener('focusin',()=>{header.classList.remove('is-hidden');resetScrollTracking();});
 })();
