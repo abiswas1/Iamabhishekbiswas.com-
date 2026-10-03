@@ -1,8 +1,19 @@
 import { createFluid } from './contact-liquid-engine.js?v=253';
 
+// iOS can discard a WebGL surface while its browser toolbar scrolls/resizes.
+// Keep the native animated CSS gradient on those devices, including iPadOS
+// browsers that identify as a Mac. No canvas means no opaque cleared frame.
+const useNativeGradient = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
 function attachFluid(section, compact = false) {
   if (!section || section.dataset.liquidReady) return;
   section.dataset.liquidReady = 'true';
+  if (useNativeGradient) {
+    section.dataset.liquidMode = 'css';
+    return;
+  }
+  section.dataset.liquidMode = 'webgl';
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const touchScreen = matchMedia('(hover: none), (pointer: coarse)');
   const canvas = document.createElement('canvas');
