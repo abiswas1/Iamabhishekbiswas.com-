@@ -1,0 +1,44 @@
+/* Product screens from the original case study, arranged for the portfolio. */
+.vmware-ui-story {
+  margin-top: clamp(48px, 7vw, 80px);
+  padding-top: clamp(32px, 5vw, 48px);
+  border-top: 1px solid var(--line);
+}
+.vmware-ui-story > p { max-width: 850px; }
+.vmware-ui-story .ui-gallery {
+  display: grid;
+  gap: 28px;
+  margin-top: 28px;
+  align-items: start;
+}
+.vmware-ui-story .ui-gallery figure { min-width: 0; margin: 0; }
+.vmware-ui-story .ui-gallery .shot { padding: 12px; }
+.vmware-ui-story .shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  border-radius: 8px;
+}
+.vmware-ui-story .evidence-link { border-radius: 8px; }
+.vmware-ui-story figcaption { font-size: .9375rem; line-height: 1.6; }
+.vmware-ui-story figcaption strong { display: block; margin-bottom: 3px; }
+.vmware-ui-story .ui-comparison { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+.vmware-ui-story .ui-stack { display: grid; gap: 28px; min-width: 0; }
+.vmware-ui-story .ui-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.vmware-ui-story .ui-conversation { max-width: 860px; margin-inline: auto; }
+.vmware-ui-story .ui-mobile { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px 18px; }
+.vmware-ui-story .ui-mobile .shot { padding: 6px; border-radius: 18px; }
+.vmware-ui-story .ui-mobile figcaption { font-size: .875rem; margin-top: 10px; }
+.vmware-ui-story .ui-support { margin-top: 32px; }
+.vmware-ui-story .ui-hint { margin: 24px 0 0; color: var(--muted); font-size: .875rem; }
+@media (max-width: 900px) {
+  .vmware-ui-story .ui-mobile { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .vmware-ui-story .ui-comparison,
+  .vmware-ui-story .ui-pair { grid-template-columns: minmax(0, 1fr); }
+  .vmware-ui-story .ui-mobile { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 14px; }
+  .vmware-ui-story .ui-gallery .shot { padding: 8px; }
+  .vmware-ui-story .ui-mobile .shot { padding: 5px; }
+}

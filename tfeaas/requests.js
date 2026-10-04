@@ -22,10 +22,10 @@
   const emailFallback = gate.querySelector('.case-access-request');
   const preview = new URLSearchParams(location.search).get('request-preview') === '1';
   const states = {
-    pending: ['Request sent.', 'I’ll review your request and email you once approved.'],
+    pending: ['Request sent.', 'I’ll review your request. If approved, I’ll email you the password.'],
     approved: ['Access approved.', 'Check your email for the password, then enter it to continue.'],
     declined: ['Request reviewed.', 'I’m unable to share this project at the moment. You’re welcome to email me about my work.'],
-    expired: ['Check your email.', 'This request status is no longer available. If you received a password, enter it below. Otherwise, email me for access.']
+    expired: ['Check your email.', 'The status link for this request has expired. If you received a password, enter it below. Otherwise, email me for access.']
   };
   let enabled = false, configReady = false, receipt = null, timer, checking = false, lastCheck = 0;
   let passwordMode = location.hash === '#case-password';
@@ -167,7 +167,7 @@
       render(true);
       schedule();
     } catch (error) {
-      message(error instanceof TypeError ? 'Couldn’t confirm your request. Try again or use the email link below.' : error.message, true);
+      message(error instanceof TypeError ? 'We could not confirm that your request was sent. Try again or email me for access.' : error.message, true);
       button.disabled = false;
       buttonLabel.textContent = 'Request access';
     } finally { form.setAttribute('aria-busy', 'false'); }

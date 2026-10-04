@@ -4,8 +4,13 @@
 <meta charset="utf-8">
 <script src="/shared/theme.js?v=189"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VMware Skyline health check reports | Abhishek Biswas</title>
-<meta name="description" content="How I designed the TAM health check report experience in VMware Skyline, from activation to a finished PDF.">
+<title>VMware Skyline UX Case Study | Abhishek Biswas</title>
+<link rel="canonical" href="https://iamabhishekbiswas.com/vmware-skyline/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VMware Skyline UX Case Study | Abhishek Biswas">
+<meta property="og:description" content="How Abhishek Biswas designed VMware Skyline health check reports, helping technical account managers turn infrastructure issues into recommendations.">
+<meta property="og:url" content="https://iamabhishekbiswas.com/vmware-skyline/">
+<meta name="description" content="How Abhishek Biswas designed VMware Skyline health check reports, helping technical account managers turn infrastructure issues into recommendations.">
 <meta name="theme-color" content="#f4f5f1">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&amp;family=Hanken+Grotesk:wght@500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared/case-study.css?v=221">
@@ -30,16 +35,16 @@
 
 <header class="hero" id="overview"><div class="wrap">
   <span class="label">Case study / VMware Skyline</span>
-  <h1>Turning IT infrastructure issues into actionable reports.</h1>
-  <p class="lede">VMware's Technical Account Managers check the health of their customers' infrastructure and recommend improvements. That work was manual, slow and inconsistent. I designed the experience in Skyline that turned it into a guided, largely automated report, from activating the service to sharing the final PDF.</p><aside class="case-brief" aria-label="The project in 20 seconds"><span class="label">The project in 20 seconds</span><dl><div><dt>Problem</dt><dd>Technical account managers assembled IT infrastructure assessments through manual work and handoffs.</dd></div><div><dt>My role</dt><dd>Designed user journeys, wireframes and the final interface with product, engineering and QA.</dd></div><div><dt>Key decision</dt><dd>Build on Skyline’s existing findings, then guide the team through review and report creation.</dd></div><div><dt>Outcome</dt><dd>A guided workflow for activating the service, preparing an assessment and sharing the report.</dd></div></dl></aside>
+  <h1>Turning infrastructure issues into reports with clear recommendations.</h1>
+  <p class="lede">VMware's Technical Account Managers check the health of their customers' infrastructure and recommend improvements. That work was manual, slow and inconsistent. I designed the experience in Skyline that turned it into a guided, largely automated report, from activating the service to sharing the final PDF.</p><aside class="case-brief" aria-label="The project in 20 seconds"><span class="label">The project in 20 seconds</span><dl><div><dt>Problem</dt><dd>Technical account managers collected infrastructure findings and manually assembled customer assessment reports.</dd></div><div><dt>My role</dt><dd>Designed user journeys, wireframes and the final interface with product, engineering and QA.</dd></div><div><dt>Key decision</dt><dd>Build on Skyline’s existing findings, then guide the team through review and report creation.</dd></div><div><dt>Outcome</dt><dd>A guided workflow for activating the service, preparing an assessment and sharing the report.</dd></div></dl></aside>
   <figure><div class="shot mist"><a class="evidence-link" href="/image/?src=%2Fassets%2Fvmware-skyline-9cf1370b3a.webp" data-full-image="/assets/vmware-skyline-9cf1370b3a.webp" target="_blank" rel="noopener" aria-label="Open full-size image: The Create Health Check report screen, listing triggered best practices with grades, affected objects and recommendations."><img src="../assets/vmware-skyline-9cf1370b3a.webp" width="1600" height="1591" alt="The Create Health Check report screen, listing triggered best practices with grades, affected objects and recommendations." decoding="async" loading="lazy"></a></div></figure>
   <dl class="facts">
     <div><dt>Role</dt><dd>Product Designer: user journeys, wireframes and final UI</dd></div>
-    <div><dt>Team</dt><dd>3 product designers, working with product, front-end and QA</dd></div>
+    <div><dt>Team</dt><dd>3 product designers, working with product, frontend and QA</dd></div>
     <div><dt>Timeline</dt><dd>5 months</dd></div>
     <div><dt>Product</dt><dd>VMware Skyline Advisor and Skyline Viewer</dd></div>
   </dl>
-  <p class="note">To comply with my non-disclosure agreement, I have omitted and obfuscated confidential information. This case study is my own and doesn't necessarily reflect the views of VMware or Broadcom.</p>
+  <p class="note">To comply with my nondisclosure agreement, I have omitted and obfuscated confidential information. This case study is my own and doesn't necessarily reflect the views of VMware or Broadcom.</p>
 </div></header>
 
 <section id="context"><div class="wrap">
@@ -53,9 +58,9 @@
   <h2>Three people, one report.</h2>
   <p>Anita activates the service as an administrator. Anil, the TAM, prepares the health check. Paul in Professional Services can create a report when a customer requests one.</p>
   <figure><div class="grid3">
-    <div class="card"><div class="av">An</div><span class="tag">Customer</span><h3>Anita, VI admin</h3><p>Manages her company's VMware environment. She activates the TAM service in Skyline Advisor and receives the reports. Access depends on her company's support entitlement.</p></div>
+    <div class="card"><div class="av">An</div><span class="tag">Customer</span><h3>Anita, virtual infrastructure administrator</h3><p>Manages her company's VMware environment. She activates the TAM service in Skyline Advisor and receives the reports. Access depends on the support plan her company has purchased.</p></div>
     <div class="card"><div class="av">Ai</div><span class="tag">VMware</span><h3>Anil, Technical Account Manager</h3><p>Delivers health checks to his customers at least once a year, and more often if needed during the engagement. Mostly works from automated findings, adding manual ones in special cases.</p></div>
-    <div class="card"><div class="av">Pa</div><span class="tag">VMware</span><h3>Paul, Professional Services</h3><p>Delivers one-off health checks that customers buy on demand, for a selected part of their inventory. Uses both automated and manual findings.</p></div>
+    <div class="card"><div class="av">Pa</div><span class="tag">VMware</span><h3>Paul, Professional Services</h3><p>Delivers one time health checks that customers buy on demand, for a selected part of their inventory. Uses both automated and manual findings.</p></div>
   </div></figure>
 </div></section>
 
@@ -63,7 +68,7 @@
   <span class="label">Journey</span>
   <h2>Mapping the handoffs first.</h2>
   <p>Activation starts in Skyline Advisor and finishes in Skyline Viewer. I mapped what each person could see and do before designing the screens.</p>
-  <figure><div class="shot "><a class="evidence-link" href="/image/?src=%2Fassets%2Fvmware-skyline-39bd36337d.webp" data-full-image="/assets/vmware-skyline-39bd36337d.webp" target="_blank" rel="noopener" aria-label="Open full-size image: A swimlane journey map showing how the VI admin requests activation in Skyline Advisor and the TAM completes it in Skyline Viewer."><img src="../assets/vmware-skyline-39bd36337d.webp" width="1600" height="860" alt="A swimlane journey map showing how the VI admin requests activation in Skyline Advisor and the TAM completes it in Skyline Viewer." decoding="async" loading="lazy"></a></div><figcaption>The activation journey. The customer starts it, the TAM finishes it, and both need to know where things stand.</figcaption></figure>
+  <figure><div class="shot "><a class="evidence-link" href="/image/?src=%2Fassets%2Fvmware-skyline-39bd36337d.webp" data-full-image="/assets/vmware-skyline-39bd36337d.webp" target="_blank" rel="noopener" aria-label="Open full-size image: A swimlane journey map showing how the VI admin requests activation in Skyline Advisor and the TAM completes it in Skyline Viewer."><img src="../assets/vmware-skyline-39bd36337d.webp" width="1600" height="860" alt="A swimlane journey map showing how the VI admin requests activation in Skyline Advisor and the TAM completes it in Skyline Viewer." decoding="async" loading="lazy"></a></div><figcaption>The customer activates the service and shares the organisation ID. The Technical Account Manager completes setup in Skyline Viewer. Both need to see the setup status.</figcaption></figure>
 </div></section>
 
 <section id="design"><div class="wrap">
@@ -89,7 +94,7 @@
     <div class="shot"><a class="evidence-link" href="/image/?src=%2Fassets%2Fvmware-skyline-931f844671.webp" data-full-image="/assets/vmware-skyline-931f844671.webp" target="_blank" rel="noopener" aria-label="Open full-size image: The vSphere health check report, with a cover page, methodology, executive summary charts and a findings heatmap."><img src="../assets/vmware-skyline-931f844671.webp" width="1600" height="2285" alt="The vSphere health check report, with a cover page, methodology, executive summary charts and a findings heatmap." decoding="async" loading="lazy"></a></div>
   </div>
   <div class="feature flip">
-    <div class="ftext"><span class="label">04 / Report library</span><h3>Every report in one place</h3><p>The library keeps completed reports and data exports together for the entitled roles.</p></div>
+    <div class="ftext"><span class="label">04 / Report library</span><h3>Every report in one place</h3><p>The library keeps completed reports and data exports together for users whose roles allow access.</p></div>
     <div class="shot"><a class="evidence-link" href="/image/?src=%2Fassets%2Fvmware-skyline-07c5f4e460.webp" data-full-image="/assets/vmware-skyline-07c5f4e460.webp" target="_blank" rel="noopener" aria-label="Open full-size image: The TAM reports library, showing engagement details and a list of health check and data export reports."><img src="../assets/vmware-skyline-07c5f4e460.webp" width="1600" height="848" alt="The TAM reports library, showing engagement details and a list of health check and data export reports." decoding="async" loading="lazy"></a></div>
   </div>
   </div></section>
@@ -97,17 +102,17 @@
 <section id="delivery"><div class="wrap">
   <span class="label">Delivery</span>
   <h2>Seeing it through to release.</h2>
-  <p>I worked with product, frontend and QA through handoff and user acceptance testing. Access across the three roles produced the most edge cases.</p>
+  <p>I worked with product, frontend and QA through handoff and user acceptance testing. We checked which setup steps, report actions and exports each of the three roles could access. Differences in permissions needed particular attention during testing.</p>
   </div></section>
 
 <section id="reflection"><div class="wrap">
   <span class="label">Looking back</span>
   <h2>What this project taught me.</h2>
-  <p>Mapping the handoffs early made the report flow easier to design and test across roles.</p></div></section>
+  <p>Before designing the report builder, I mapped how the administrator, Technical Account Manager and Professional Services user would share the work. That helped us test each role’s permissions and the steps between activation and report delivery.</p></div></section>
 
 </main>
 <div class="next"><div class="wrap">
-  <a class="next-card" href="../cogoport-research/index.html"><small>Next case study</small><span class="next-title">Finding the gaps in the freight journey.</span><span class="next-action">View project ↗</span></a>
+  <a class="next-card" href="../cogoport-research/index.html"><small>Next case study</small><span class="next-title">Investigating delays in freight booking and coordination.</span><span class="next-action">View project ↗</span></a>
   <div class="foot"><span>© 2026 Abhishek Biswas</span><span>Made with curiosity. Still learning.</span></div>
 </div></div>
 </div><!-- case-page -->

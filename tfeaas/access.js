@@ -87,13 +87,13 @@
       }
       if (current !== generation) return;
       image.onload = () => { stage?.classList.add('is-loaded'); stage?.classList.remove('is-error'); };
-      image.onerror = () => { stage?.classList.add('is-error'); if (mediaStatus) mediaStatus.textContent = 'Image unavailable. Lock and unlock to retry.'; };
+      image.onerror = () => { stage?.classList.add('is-error'); if (mediaStatus) mediaStatus.textContent = 'This image could not load. Lock the case study, then enter the password again to retry.'; };
       image.src = url;
       if (link) { link.href = link.dataset.privateHref === image.dataset.privateSrc ? url : await asset(link.dataset.privateHref); link.removeAttribute('aria-disabled'); }
     } catch {
       if (current !== generation) return;
       stage?.classList.add('is-error');
-      if (mediaStatus) { mediaStatus.textContent = 'Image unavailable. Lock and unlock to retry.'; mediaStatus.removeAttribute('aria-hidden'); }
+      if (mediaStatus) { mediaStatus.textContent = 'This image could not load. Lock the case study, then enter the password again to retry.'; mediaStatus.removeAttribute('aria-hidden'); }
     }
   }
   async function reveal(nextSession, scroll) {
