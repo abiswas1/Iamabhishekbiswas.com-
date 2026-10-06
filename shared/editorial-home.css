@@ -213,3 +213,8 @@ html:not([data-theme="dark"]) .hero .hero-experience-highlight{color:#006b60}
  .hero-lead h1{margin-bottom:18px}
  .hero-actions{margin-top:18px}
 }
+
+/* Wider desktop homepage, with existing tablet and mobile spacing retained. */
+@media(min-width:1101px){
+ .wrap,.intro-stack,.portfolio-header .portfolio-header-inner{max-width:1600px;padding-inline:48px}
+}
