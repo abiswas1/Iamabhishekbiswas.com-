@@ -190,3 +190,15 @@ html[data-theme="dark"] .company-strip{--company-ink:#d5e3da;--company-opacity:.
   .company-strip{padding-block:20px}
   .company-logo{width:calc(var(--logo-width)*.86);height:calc(var(--logo-height)*.86)}
 }
+
+/* The hero offers a work anchor and the current downloadable résumé. */
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.hero .hero-actions .hero-work-link{margin-top:0;justify-content:center}
+.hero .hero-primary{background:var(--lime);color:#172724;border-color:var(--lime)}
+.hero .hero-primary:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+@media(max-width:420px){.hero-actions{gap:10px}.hero .hero-actions .hero-work-link{padding-inline:17px}}
+
+/* Use the same green fluid surface as the navigation contact button. */
+.hero .hero-contact{position:relative;isolation:isolate;overflow:hidden;border:0;color:#172724;background:linear-gradient(115deg,#dcf363 0%,#a9e39a 52%,#68cbb0 100%);background-size:200% 200%;background-position:50% 50%;animation:contact-gradient-drift 4s ease-in-out infinite alternate;transition:filter .2s ease}
+.hero .hero-contact:hover{color:#172724;filter:brightness(.96)}
+@media(prefers-reduced-motion:reduce){.hero .hero-contact{animation:none}}

@@ -174,4 +174,4 @@ function attachFluid(section, compact = false) {
 }
 
 attachFluid(document.querySelector('#contact.contact'));
-document.querySelectorAll('.portfolio-header .portfolio-contact').forEach(button => attachFluid(button, true));
+document.querySelectorAll('.portfolio-header .portfolio-contact, .hero-contact').forEach(button => attachFluid(button, true));
