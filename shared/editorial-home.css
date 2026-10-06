@@ -202,3 +202,14 @@ html[data-theme="dark"] .company-strip{--company-ink:#d5e3da;--company-opacity:.
 .hero .hero-contact{position:relative;isolation:isolate;overflow:hidden;border:0;color:#172724;background:linear-gradient(115deg,#dcf363 0%,#a9e39a 52%,#68cbb0 100%);background-size:200% 200%;background-position:50% 50%;animation:contact-gradient-drift 4s ease-in-out infinite alternate;transition:filter .2s ease}
 .hero .hero-contact:hover{color:#172724;filter:brightness(.96)}
 @media(prefers-reduced-motion:reduce){.hero .hero-contact{animation:none}}
+
+/* Preserve the hero while keeping its body copy and highlighted experience AA readable. */
+html:not([data-theme="dark"]) .hero .hero-aside{color:#596761}
+html:not([data-theme="dark"]) .hero .hero-experience-highlight{color:#006b60}
+.career-entry p.career-description{color:var(--ink)}
+@media(max-width:420px){
+ .hero .eyebrow{font-size:.75rem;line-height:1.5;letter-spacing:.055em}
+ .intro-stack{padding-bottom:28px;row-gap:22px}
+ .hero-lead h1{margin-bottom:18px}
+ .hero-actions{margin-top:18px}
+}
